@@ -28,22 +28,6 @@
               {{ pageContent.pageDescription }}
             </v-card-text>
           </v-col>
-          <v-col
-            v-show="$vuetify.breakpoint.xsOnly"
-            cols="12"
-            sm="12"
-            md="12"
-            lg="12"
-            xl="12"
-          >
-            <v-img
-              contain
-              style="max-width:95%;margin-top: 12%; margin-bottom: 10%"
-              src="https://jacekjeznach.com/wp-content/themes/jj/img/timeline.png"
-              alt="experiences"
-              aspect-ratio="2"
-            />
-          </v-col>
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="end">
             <v-card-text class="custom-bottom-tags">
