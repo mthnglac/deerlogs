@@ -8,7 +8,13 @@
       xl="5"
       :style="isMobileLetStyleToLeftCard"
     >
-      <v-card class="mx-auto" flat color="transparent">
+      <v-card
+        class="mx-auto"
+        width="100%"
+        height="100%"
+        flat
+        color="transparent"
+      >
         <v-row class="fill-height" align="stretch" justify="space-between">
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="start">
             <v-card-text class="custom-top-tags">
