@@ -1,12 +1,14 @@
 <template>
   <v-row class="fill-height" align="stretch" justify="space-around">
-    <v-col cols="12" sm="12" md="5" lg="5" xl="5">
-      <v-card
-        :style="isMobileLetStyleToLeftCard"
-        class="mx-auto"
-        flat
-        color="transparent"
-      >
+    <v-col
+      cols="12"
+      sm="12"
+      md="5"
+      lg="5"
+      xl="5"
+      :style="isMobileLetStyleToLeftCard"
+    >
+      <v-card class="mx-auto" flat color="transparent" height="100%">
         <v-row class="fill-height" align="stretch" justify="space-between">
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="start">
             <v-card-text class="custom-top-tags">
@@ -33,43 +35,6 @@
             </v-card-text>
           </v-col>
           <v-spacer />
-          <v-col
-            v-show="$vuetify.breakpoint.xsOnly"
-            cols="12"
-            sm="12"
-            md="12"
-            lg="12"
-            xl="12"
-            align-self="center"
-          >
-            <v-card
-              class="mx-auto"
-              width="100%"
-              height="100%"
-              flat
-              color="transparent"
-            >
-              <v-row class="fill-height" align="center" justify="center">
-                <v-col
-                  cols="12"
-                  sm="12"
-                  md="12"
-                  lg="12"
-                  xl="12"
-                  align-self="center"
-                >
-                  <v-img
-                    :src="mainLogoSrc"
-                    alt="Logo"
-                    contain
-                    max-width="500"
-                    width="50vw"
-                    height="56vh"
-                  />
-                </v-col>
-              </v-row>
-            </v-card>
-          </v-col>
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="end">
             <v-card-text class="custom-bottom-tags">
@@ -78,6 +43,36 @@
                 &lt;/html&gt;
               </span>
             </v-card-text>
+          </v-col>
+        </v-row>
+      </v-card>
+    </v-col>
+    <v-col
+      v-show="$vuetify.breakpoint.xsOnly"
+      cols="12"
+      sm="12"
+      md="12"
+      lg="12"
+      xl="12"
+      align-self="center"
+      :style="isMobileLetStyleToRightCard"
+    >
+      <v-card
+        class="mx-auto"
+        width="100%"
+        height="100%"
+        flat
+        color="transparent"
+      >
+        <v-row class="fill-height" align="center" justify="center">
+          <v-col cols="12" sm="12" md="12" lg="12" xl="12">
+            <v-img
+              :src="mainLogoSrc"
+              alt="Logo"
+              contain
+              max-width="500"
+              aspect-ratio="1.5"
+            />
           </v-col>
         </v-row>
       </v-card>
@@ -125,10 +120,21 @@ export default {
   },
   computed: {
     isMobileLetStyleToLeftCard() {
-      if (this.windowSize.x > 600) {
+      if (this.windowSize.x < 600) {
         return {
-          width: '100%',
-          height: '100%'
+          'z-index': '1',
+          position: 'absolute',
+          left: '0',
+          height: '95%'
+        }
+      }
+      return null
+    },
+    isMobileLetStyleToRightCard() {
+      if (this.windowSize.x < 600) {
+        return {
+          'z-index': '0',
+          opacity: '.4'
         }
       }
       return null

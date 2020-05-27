@@ -51,7 +51,7 @@ export default {
   name: 'WagonAppBar',
   data() {
     return {
-      avatarImgSrc: require('../../static/logo_deer_no_shadow.png'),
+      avatarImgSrc: '/logo_deer_no_shadow.png',
       items: [
         { title: 'Home', icon: 'mdi-home-outline', link: '/' },
         { title: 'About', icon: 'mdi-face-outline', link: '/about' },

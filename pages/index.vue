@@ -1,12 +1,12 @@
 <template>
   <v-row class="fill-height" align="stretch" justify="space-around">
     <v-col
-      :style="isMobileLetStyleToLeftCard"
       cols="12"
       sm="6"
       md="5"
       lg="5"
       xl="5"
+      :style="isMobileLetStyleToLeftCard"
     >
       <v-card
         class="mx-auto"
@@ -55,12 +55,13 @@
       </v-card>
     </v-col>
     <v-col
-      :style="isMobileLetStyleToRightCard"
+      cols="12"
       sm="6"
       md="5"
       lg="5"
       xl="5"
       class="pr-5"
+      :style="isMobileLetStyleToRightCard"
     >
       <v-card
         class="mx-auto"
@@ -70,14 +71,13 @@
         color="transparent"
       >
         <v-row class="fill-height" align="center" justify="center">
-          <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
+          <v-col cols="12" sm="12" md="12" lg="12" xl="12">
             <v-img
               :src="mainLogoSrc"
               alt="Logo"
               contain
               max-width="500"
-              width="50vw"
-              height="56vh"
+              aspect-ratio="1.5"
             />
           </v-col>
         </v-row>
@@ -105,7 +105,7 @@ export default {
           'z-index': '1',
           position: 'absolute',
           left: '0',
-          height: '90%'
+          height: '95%'
         }
       }
       return null
@@ -114,11 +114,6 @@ export default {
       if (this.windowSize.x < 600) {
         return {
           'z-index': '0',
-          position: 'relative',
-          top: '0%',
-          right: '11%',
-          bottom: '15%',
-          left: '28%',
           opacity: '.4'
         }
       }
@@ -158,7 +153,10 @@ export default {
   }
 }
 .custom-text-zone {
-  margin-left: 10%;
+  padding-left: 10%;
+  &.card-title {
+    color: #08fdd8;
+  }
 }
 .custom-tags {
   font-family: 'URW Chancery L', cursive;
