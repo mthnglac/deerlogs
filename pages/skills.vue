@@ -26,14 +26,12 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-title class="custom-text-zone card-title">
-              <div id="entry">
-                <div class="display-2 font-weight-black">
-                  {{ pageContent.pageTitle }}
-                </div>
+              <div id="entry" class="display-2 font-weight-black">
+                <nuxt-content :document="skillsTitle" />
               </div>
             </v-card-title>
             <v-card-text class="custom-text-zone">
-              {{ pageContent.pageDescription }}
+              <nuxt-content :document="skillsDescription" />
             </v-card-text>
           </v-col>
           <v-spacer />
@@ -105,11 +103,12 @@
 </template>
 
 <script>
-import WagonSkills from '../components/snippets/WagonSkills'
 export default {
   name: 'Skills',
-  components: {
-    WagonSkills
+  async asyncData({ $content }) {
+    const skillsTitle = await $content('skills/title').fetch()
+    const skillsDescription = await $content('skills/description').fetch()
+    return { skillsTitle, skillsDescription }
   },
   data() {
     return {
@@ -117,7 +116,6 @@ export default {
         x: 0,
         y: 0
       },
-      skillsTitle: '',
       mainLogoSrc: '/logo-main.png'
     }
   },
@@ -125,10 +123,7 @@ export default {
     isMobileLetStyleToLeftCard() {
       if (this.windowSize.x < 600) {
         return {
-          'z-index': '1',
-          position: 'absolute',
-          left: '0',
-          height: '95%'
+          'z-index': '1'
         }
       }
       return null
@@ -137,13 +132,13 @@ export default {
       if (this.windowSize.x < 600) {
         return {
           'z-index': '0',
-          opacity: '.4'
+          position: 'absolute',
+          left: '0',
+          height: '90%',
+          opacity: '.3'
         }
       }
       return null
-    },
-    pageContent() {
-      return this.$store.getters['skills/getPageContent']
     }
   },
   mounted() {

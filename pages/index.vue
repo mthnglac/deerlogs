@@ -26,14 +26,16 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-text class="custom-text-zone pre-formatted">
-              <p id="entry" class="display-2 font-weight-black">
-                {{ pageContent.pageTitle }}
-              </p>
+              <nuxt-content
+                id="entry"
+                class="display-2 font-weight-black"
+                :document="homeTitle"
+              />
               <div
                 class="text--primary font-weight-thin"
                 style="letter-spacing: .4vw;"
               >
-                {{ pageContent.footNote }}
+                <nuxt-content :document="homeFootNote" />
               </div>
             </v-card-text>
             <v-card-actions class="custom-text-zone">
@@ -89,6 +91,11 @@
 <script>
 export default {
   name: 'Index',
+  async asyncData({ $content }) {
+    const homeTitle = await $content('home/title').fetch()
+    const homeFootNote = await $content('home/footNote').fetch()
+    return { homeTitle, homeFootNote }
+  },
   data() {
     return {
       windowSize: {
@@ -102,10 +109,7 @@ export default {
     isMobileLetStyleToLeftCard() {
       if (this.windowSize.x < 600) {
         return {
-          'z-index': '1',
-          position: 'absolute',
-          left: '0',
-          height: '95%'
+          'z-index': '1'
         }
       }
       return null
@@ -114,13 +118,13 @@ export default {
       if (this.windowSize.x < 600) {
         return {
           'z-index': '0',
-          opacity: '.4'
+          position: 'absolute',
+          left: '0',
+          height: '90%',
+          opacity: '.3'
         }
       }
       return null
-    },
-    pageContent() {
-      return this.$store.getters['home/getPageContent']
     }
   },
   mounted() {

@@ -2,9 +2,9 @@ export const state = () => ({
   pageContent: {
     pageTitle: 'About Me',
     pageDescription:
-      ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. At blanditiis consequuntur culpa, delectus deleniti earum facilis quisquam sed! Assumenda ducimus error labore magni qui repellendus vel! Culpa harum non soluta?\n' +
-      'A amet eius ipsa laborum magnam odit perferendis, porro quia reprehenderit repudiandae, rerum suscipit veritatis. Atque distinctio earum ex magnam magni quae suscipit voluptatum. Aliquam et perspiciatis quisquam similique veniam.\n' +
-      'A beatae dignissimos eius exercitationem expedita harum id labore laudantium natus numquam praesentium quam quas quasi quibusdam quis sit sunt, voluptatibus. Consectetur, pariatur, voluptatibus. Delectus ex exercitationem labore quasi sed? '
+      'Professionally connected with the web development industry and information technology for many years.' +
+      'Well-organised person, problem solver, independent employee with high attention to detail. Fan of outdoor activities, TV series and recently English literature. Therefore remote employment is preferred.' +
+      'Interested in the entire frontend spectrum and working on ambitious projects with positive people.'
   }
 })
 

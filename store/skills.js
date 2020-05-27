@@ -2,9 +2,11 @@ export const state = () => ({
   pageContent: {
     pageTitle: 'Skills & Experience',
     pageDescription:
-      ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. At blanditiis consequuntur culpa, delectus deleniti earum facilis quisquam sed! Assumenda ducimus error labore magni qui repellendus vel! Culpa harum non soluta?\n' +
-      'A amet eius ipsa laborum magnam odit perferendis, porro quia reprehenderit repudiandae, rerum suscipit veritatis. Atque distinctio earum ex magnam magni quae suscipit voluptatum. Aliquam et perspiciatis quisquam similique veniam.\n' +
-      'A beatae dignissimos eius exercitationem expedita harum id labore laudantium natus numquam praesentium quam quas quasi quibusdam quis sit sunt, voluptatibus. Consectetur, pariatur, voluptatibus. Delectus ex exercitationem labore quasi sed? '
+      'The main area of my expertise is frontend development (client side).' +
+      'HTML, CSS, Javascript, building small and medium web apps with React, ReactNative, Vue, Nuxt, custom plugins, features, animations and coding interactive layouts.' +
+      'I have also advanced-level backend developer experience with Django, DRF, RestAPI.' +
+      'Visit my LinkedIn profile for more details or just contact me.' +
+      'You can also visit my GitHub profile check or download my open-source projects.'
   }
 })
 
