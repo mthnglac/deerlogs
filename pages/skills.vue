@@ -28,12 +28,12 @@
             <v-card-title class="custom-text-zone card-title">
               <div id="entry">
                 <div class="display-2 font-weight-black">
-                  {{ pageContent.pageTitle }}
+                  <nuxt-content :document="skillsTitle" />
                 </div>
               </div>
             </v-card-title>
             <v-card-text class="custom-text-zone">
-              {{ pageContent.pageDescription }}
+              <nuxt-content :document="skillsDescription" />
             </v-card-text>
           </v-col>
           <v-spacer />
@@ -107,13 +107,17 @@
 <script>
 export default {
   name: 'Skills',
+  async asyncData({ $content }) {
+    const skillsTitle = await $content('skills/title').fetch()
+    const skillsDescription = await $content('skills/description').fetch()
+    return { skillsTitle, skillsDescription }
+  },
   data() {
     return {
       windowSize: {
         x: 0,
         y: 0
       },
-      skillsTitle: '',
       mainLogoSrc: '/logo-main.png'
     }
   },
@@ -137,9 +141,6 @@ export default {
         }
       }
       return null
-    },
-    pageContent() {
-      return this.$store.getters['skills/getPageContent']
     }
   },
   mounted() {

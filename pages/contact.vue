@@ -28,17 +28,14 @@
             <v-card-title class="custom-text-zone card-title">
               <div id="entry">
                 <div class="display-2 font-weight-black">
-                  {{ contactTitle }}
+                  <nuxt-content :document="contactTitle" />
                 </div>
               </div>
             </v-card-title>
             <v-spacer />
             <v-card-text class="custom-text-zone">
               <div>
-                I am interested in freelance opportunities - especially
-                ambitious or large projects. However, if you have other request
-                or question, don't hesitate to contact me using below form
-                either.
+                <nuxt-content :document="contactDescription" />
               </div>
             </v-card-text>
           </v-col>
@@ -114,13 +111,17 @@
 <script>
 export default {
   name: 'Contact',
+  async asyncData({ $content }) {
+    const contactTitle = await $content('contact/title').fetch()
+    const contactDescription = await $content('contact/description').fetch()
+    return { contactTitle, contactDescription }
+  },
   data() {
     return {
       windowSize: {
         x: 0,
         y: 0
       },
-      contactTitle: 'Contact',
       mainLogoSrc: '/logo-main.png'
     }
   },

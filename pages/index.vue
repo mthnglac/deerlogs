@@ -26,15 +26,16 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-text class="custom-text-zone pre-formatted">
-              <p id="entry" class="display-2 font-weight-black">
-                {{ pageContent.pageTitle }}
-              </p>
+              <nuxt-content
+                id="entry"
+                class="display-2 font-weight-black"
+                :document="homeTitle"
+              />
               <div
                 class="text--primary font-weight-thin"
                 style="letter-spacing: .4vw;"
               >
-                {{ pageContent.footNote }}
-                <nuxt-content :document="metok" />
+                <nuxt-content :document="homeFootNote" />
               </div>
             </v-card-text>
             <v-card-actions class="custom-text-zone">
@@ -91,9 +92,9 @@
 export default {
   name: 'Index',
   async asyncData({ $content }) {
-    const metok = await $content('metecim').fetch()
-    console.log(metok)
-    return { metok }
+    const homeTitle = await $content('home/title').fetch()
+    const homeFootNote = await $content('home/footNote').fetch()
+    return { homeTitle, homeFootNote }
   },
   data() {
     return {
@@ -124,9 +125,6 @@ export default {
         }
       }
       return null
-    },
-    pageContent() {
-      return this.$store.getters['home/getPageContent']
     }
   },
   mounted() {
