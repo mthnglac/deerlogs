@@ -109,10 +109,7 @@ export default {
     isMobileLetStyleToLeftCard() {
       if (this.windowSize.x < 600) {
         return {
-          'z-index': '1',
-          position: 'absolute',
-          left: '0',
-          height: '95%'
+          'z-index': '1'
         }
       }
       return null
@@ -121,7 +118,10 @@ export default {
       if (this.windowSize.x < 600) {
         return {
           'z-index': '0',
-          opacity: '.4'
+          position: 'absolute',
+          left: '0',
+          height: '90%',
+          opacity: '.3'
         }
       }
       return null

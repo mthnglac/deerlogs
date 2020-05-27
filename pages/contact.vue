@@ -26,10 +26,8 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-title class="custom-text-zone card-title">
-              <div id="entry">
-                <div class="display-2 font-weight-black">
-                  <nuxt-content :document="contactTitle" />
-                </div>
+              <div id="entry" class="display-2 font-weight-black">
+                <nuxt-content :document="contactTitle" />
               </div>
             </v-card-title>
             <v-spacer />
@@ -129,10 +127,7 @@ export default {
     isMobileLetStyleToLeftCard() {
       if (this.windowSize.x < 600) {
         return {
-          'z-index': '1',
-          position: 'absolute',
-          left: '0',
-          height: '95%'
+          'z-index': '1'
         }
       }
       return null
@@ -141,7 +136,10 @@ export default {
       if (this.windowSize.x < 600) {
         return {
           'z-index': '0',
-          opacity: '.4'
+          position: 'absolute',
+          left: '0',
+          height: '90%',
+          opacity: '.3'
         }
       }
       return null
