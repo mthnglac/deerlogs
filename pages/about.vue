@@ -1,13 +1,6 @@
 <template>
   <v-row class="fill-height" align="stretch" justify="space-around">
-    <v-col
-      cols="12"
-      sm="12"
-      md="5"
-      lg="5"
-      xl="5"
-      :style="isMobileLetStyleToLeftCard"
-    >
+    <v-col cols="12" sm="12" md="5" lg="5" xl="5">
       <v-card
         class="mx-auto"
         width="100%"
@@ -26,14 +19,12 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-title class="custom-text-zone card-title">
-              <div id="entry">
-                <div class="display-2 font-weight-black">
-                  {{ pageContent.pageTitle }}
-                </div>
+              <div id="entry" class="display-2 font-weight-black">
+                <nuxt-content :document="aboutTitle" />
               </div>
             </v-card-title>
             <v-card-text class="custom-text-zone">
-              {{ pageContent.pageDescription }}
+              <nuxt-content :document="aboutDescription" />
             </v-card-text>
           </v-col>
           <v-spacer />
@@ -50,6 +41,7 @@
     </v-col>
     <v-col
       v-show="$vuetify.breakpoint.mdAndUp"
+      cols="12"
       sm="12"
       md="5"
       lg="5"
@@ -76,6 +68,11 @@
 <script>
 export default {
   name: 'About',
+  async asyncData({ $content }) {
+    const aboutTitle = await $content('about/title').fetch()
+    const aboutDescription = await $content('about/description').fetch()
+    return { aboutTitle, aboutDescription }
+  },
   data() {
     return {
       windowSize: {
@@ -83,20 +80,6 @@ export default {
         y: 0
       },
       mainLogoSrc: '/logo-main.png'
-    }
-  },
-  computed: {
-    isMobileLetStyleToLeftCard() {
-      if (this.windowSize.x > 600) {
-        return {
-          width: '100%',
-          height: '100%'
-        }
-      }
-      return null
-    },
-    pageContent() {
-      return this.$store.getters['about/getPageContent']
     }
   },
   mounted() {
