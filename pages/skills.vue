@@ -105,12 +105,8 @@
 </template>
 
 <script>
-import WagonSkills from '../components/snippets/WagonSkills'
 export default {
   name: 'Skills',
-  components: {
-    WagonSkills
-  },
   data() {
     return {
       windowSize: {

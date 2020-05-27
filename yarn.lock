@@ -1041,6 +1041,11 @@
     std-env "^2.2.1"
     wrap-ansi "^6.2.0"
 
+"@nuxt/components@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@nuxt/components/-/components-0.3.0.tgz#6a931d54efdf9436f948c2157dc5cfad3c7efa20"
+  integrity sha512-iL5k77INTCocB0/cWF8k8wByPmc9PT4Jhi9Ntcg30B7gi0lhNgmhmfPkhnphPiBcQSEHcX+0n8HXf/yw7znfeA==
+
 "@nuxt/config@2.12.2":
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/@nuxt/config/-/config-2.12.2.tgz#df0ac32db2c7b36b5bcafc985bff1219dfe5391c"

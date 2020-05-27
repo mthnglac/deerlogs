@@ -112,10 +112,8 @@
 </template>
 
 <script>
-import WagonDartVader from '../components/snippets/WagonDartVader'
 export default {
   name: 'Contact',
-  components: { WagonDartVader },
   data() {
     return {
       windowSize: {
