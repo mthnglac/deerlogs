@@ -6,7 +6,7 @@
       md="5"
       lg="5"
       xl="5"
-      :style="isMobileLetStyleToLeftCard"
+      :style="[$vuetify.breakpoint.xsOnly && { 'z-index': '1' }]"
     >
       <v-card
         class="mx-auto"
@@ -58,7 +58,15 @@
       lg="12"
       xl="12"
       align-self="center"
-      :style="isMobileLetStyleToRightCard"
+      :style="[
+        $vuetify.breakpoint.xsOnly && {
+          'z-index': '0',
+          position: 'absolute',
+          left: '0',
+          height: '90%',
+          opacity: '.3'
+        }
+      ]"
     >
       <v-card
         class="mx-auto"
@@ -116,41 +124,7 @@ export default {
   },
   data() {
     return {
-      windowSize: {
-        x: 0,
-        y: 0
-      },
       mainLogoSrc: '/logo-main.png'
-    }
-  },
-  computed: {
-    isMobileLetStyleToLeftCard() {
-      if (this.windowSize.x < 600) {
-        return {
-          'z-index': '1'
-        }
-      }
-      return null
-    },
-    isMobileLetStyleToRightCard() {
-      if (this.windowSize.x < 600) {
-        return {
-          'z-index': '0',
-          position: 'absolute',
-          left: '0',
-          height: '90%',
-          opacity: '.3'
-        }
-      }
-      return null
-    }
-  },
-  mounted() {
-    this.onResize()
-  },
-  methods: {
-    onResize() {
-      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
     }
   }
 }

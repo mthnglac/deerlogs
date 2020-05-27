@@ -75,19 +75,7 @@ export default {
   },
   data() {
     return {
-      windowSize: {
-        x: 0,
-        y: 0
-      },
       mainLogoSrc: '/logo-main.png'
-    }
-  },
-  mounted() {
-    this.onResize()
-  },
-  methods: {
-    onResize() {
-      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
     }
   }
 }
