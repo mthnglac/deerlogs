@@ -34,6 +34,7 @@
                 style="letter-spacing: .4vw;"
               >
                 {{ pageContent.footNote }}
+                <nuxt-content :document="metok" />
               </div>
             </v-card-text>
             <v-card-actions class="custom-text-zone">
@@ -89,6 +90,11 @@
 <script>
 export default {
   name: 'Index',
+  async asyncData({ $content }) {
+    const metok = await $content('metecim').fetch()
+    console.log(metok)
+    return { metok }
+  },
   data() {
     return {
       windowSize: {
