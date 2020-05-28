@@ -36,8 +36,18 @@
                 <nuxt-content :document="contactDescription" />
               </div>
             </v-card-text>
+            <v-card-actions class="custom-text-zone">
+              <div
+                v-for="item in itemsSocial"
+                :key="item.id"
+                style="padding-right: 5%"
+              >
+                <v-btn :href="item.link" fab target="_blank">
+                  <v-icon size="40">{{ item.icon }}</v-icon>
+                </v-btn>
+              </div>
+            </v-card-actions>
           </v-col>
-          <v-spacer />
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="end">
             <v-card-text class="custom-bottom-tags">
@@ -124,7 +134,36 @@ export default {
   },
   data() {
     return {
-      mainLogoSrc: '/logo-main.png'
+      title: 'Contact Me',
+      mainLogoSrc: '/logo-main.png',
+      itemsSocial: [
+        {
+          title: 'Twitter',
+          icon: 'mdi-twitter',
+          link: 'https://twitter.com/metehanglc'
+        },
+        {
+          title: 'GitHub',
+          icon: 'mdi-github',
+          link: 'https://github.com/metehanglc'
+        },
+        {
+          title: 'LinkedIn',
+          icon: 'mdi-linkedin',
+          link: 'https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/'
+        },
+        {
+          title: 'SoundCloud',
+          icon: 'mdi-soundcloud',
+          link: 'https://soundcloud.com/metehan-g-la'
+        }
+        // {
+        //   title: 'Facebook',
+        //   icon: 'mdi-facebook',
+        //   link: 'https://www.facebook.com/metehan.gulac'
+        // }
+        // { title: 'Feed', icon: 'mdi-rss', link: 'https://google.com' }
+      ]
     }
   },
   computed: {
@@ -133,6 +172,11 @@ export default {
         headline: this.$vuetify.breakpoint.xsOnly,
         'display-2': this.$vuetify.breakpoint.smAndUp
       }
+    }
+  },
+  head() {
+    return {
+      title: this.title
     }
   }
 }

@@ -95,16 +95,26 @@ export default {
           link: 'https://twitter.com/metehanglc'
         },
         {
+          title: 'GitHub',
+          icon: 'mdi-github',
+          link: 'https://github.com/metehanglc'
+        },
+        {
           title: 'LinkedIn',
           icon: 'mdi-linkedin',
           link: 'https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/'
         },
         {
-          title: 'Facebook',
-          icon: 'mdi-facebook',
-          link: 'https://www.facebook.com/metehan.gulac'
-        },
-        { title: 'Feed', icon: 'mdi-rss', link: 'https://google.com' }
+          title: 'SoundCloud',
+          icon: 'mdi-soundcloud',
+          link: 'https://soundcloud.com/metehan-g-la'
+        }
+        // {
+        //   title: 'Facebook',
+        //   icon: 'mdi-facebook',
+        //   link: 'https://www.facebook.com/metehan.gulac'
+        // }
+        // { title: 'Feed', icon: 'mdi-rss', link: 'https://google.com' }
       ]
     }
   }

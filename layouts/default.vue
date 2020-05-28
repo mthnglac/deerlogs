@@ -11,19 +11,6 @@
   </v-app>
 </template>
 
-<script>
-import WagonSideBar from '~/components/common/WagonSideBar'
-import WagonNavigationDrawer from '~/components/common/WagonNavigationDrawer'
-import WagonAppBar from '~/components/common/WagonAppBar'
-export default {
-  components: {
-    WagonAppBar,
-    WagonSideBar,
-    WagonNavigationDrawer
-  }
-}
-</script>
-
 <style lang="scss">
 html {
   overflow-y: visible;
