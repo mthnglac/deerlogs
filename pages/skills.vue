@@ -26,7 +26,7 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-title class="custom-text-zone card-title">
-              <div id="entry" class="display-2 font-weight-black">
+              <div id="entry" class="font-weight-black" :class="titleClass">
                 <nuxt-content :document="skillsTitle" />
               </div>
             </v-card-title>
@@ -121,6 +121,14 @@ export default {
   data() {
     return {
       mainLogoSrc: '/logo-main.png'
+    }
+  },
+  computed: {
+    titleClass() {
+      return {
+        headline: this.$vuetify.breakpoint.xsOnly,
+        'display-2': this.$vuetify.breakpoint.smAndUp
+      }
     }
   }
 }

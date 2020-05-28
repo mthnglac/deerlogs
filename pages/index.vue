@@ -26,11 +26,9 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-text class="custom-text-zone pre-formatted">
-              <nuxt-content
-                id="entry"
-                class="display-2 font-weight-black"
-                :document="homeTitle"
-              />
+              <div id="entry" class="font-weight-black" :class="titleClass">
+                <nuxt-content :document="homeTitle" />
+              </div>
               <div
                 class="text--primary font-weight-thin"
                 style="letter-spacing: .4vw;"
@@ -107,6 +105,14 @@ export default {
   data() {
     return {
       mainLogoSrc: '/logo-main.png'
+    }
+  },
+  computed: {
+    titleClass() {
+      return {
+        headline: this.$vuetify.breakpoint.xsOnly,
+        'display-2': this.$vuetify.breakpoint.smAndUp
+      }
     }
   }
 }
