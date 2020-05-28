@@ -33,6 +33,15 @@
             <v-card-text class="custom-text-zone">
               <nuxt-content :document="skillsDescription" />
             </v-card-text>
+            <v-card-actions class="custom-text-zone">
+              <div
+                v-for="item in itemsSkills"
+                :key="item.id"
+                style="padding-right: 5%"
+              >
+                <v-icon size="40">{{ item.icon }}</v-icon>
+              </div>
+            </v-card-actions>
           </v-col>
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="end">
@@ -120,7 +129,25 @@ export default {
   },
   data() {
     return {
-      mainLogoSrc: '/logo-main.png'
+      mainLogoSrc: '/logo-main.png',
+      itemsSkills: [
+        {
+          title: 'Python',
+          icon: 'mdi-language-python'
+        },
+        {
+          title: 'Javascript',
+          icon: 'mdi-language-javascript'
+        },
+        {
+          title: 'Vue',
+          icon: 'mdi-vuejs'
+        },
+        {
+          title: 'React',
+          icon: 'mdi-react'
+        }
+      ]
     }
   },
   computed: {
