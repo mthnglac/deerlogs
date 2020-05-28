@@ -26,15 +26,16 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-title class="custom-text-zone card-title">
-              <div id="entry" class="font-weight-black" :class="titleClass">
-                <nuxt-content :document="contactTitle" />
+              <div id="entry" class="font-weight-black">
+                <nuxt-content :class="titleClass" :document="contactTitle" />
               </div>
             </v-card-title>
             <v-spacer />
             <v-card-text class="custom-text-zone">
-              <div>
-                <nuxt-content :document="contactDescription" />
-              </div>
+              <nuxt-content
+                :class="descriptionClass"
+                :document="contactDescription"
+              />
             </v-card-text>
             <v-card-actions class="custom-text-zone">
               <div
@@ -74,7 +75,7 @@
           position: 'absolute',
           left: '0',
           height: '90%',
-          opacity: '.3'
+          opacity: '.15'
         }
       ]"
     >
@@ -171,6 +172,12 @@ export default {
       return {
         headline: this.$vuetify.breakpoint.xsOnly,
         'display-2': this.$vuetify.breakpoint.smAndUp
+      }
+    },
+    descriptionClass() {
+      return {
+        'body-2': this.$vuetify.breakpoint.xsOnly,
+        'body-1': this.$vuetify.breakpoint.smAndUp
       }
     }
   },
