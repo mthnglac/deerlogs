@@ -134,6 +134,7 @@ export default {
   },
   data() {
     return {
+      title: 'Contact Me',
       mainLogoSrc: '/logo-main.png',
       itemsSocial: [
         {
@@ -171,6 +172,11 @@ export default {
         headline: this.$vuetify.breakpoint.xsOnly,
         'display-2': this.$vuetify.breakpoint.smAndUp
       }
+    }
+  },
+  head() {
+    return {
+      title: this.title
     }
   }
 }

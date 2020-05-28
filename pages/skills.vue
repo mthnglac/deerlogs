@@ -129,6 +129,7 @@ export default {
   },
   data() {
     return {
+      title: 'Skills & Experience',
       mainLogoSrc: '/logo-main.png',
       itemsSkills: [
         {
@@ -156,6 +157,11 @@ export default {
         headline: this.$vuetify.breakpoint.xsOnly,
         'display-2': this.$vuetify.breakpoint.smAndUp
       }
+    }
+  },
+  head() {
+    return {
+      title: this.title
     }
   }
 }
