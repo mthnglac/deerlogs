@@ -26,8 +26,8 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-text class="custom-text-zone pre-formatted">
-              <div id="entry" class="font-weight-black" :class="titleClass">
-                <nuxt-content :document="homeTitle" />
+              <div id="entry" class="font-weight-black">
+                <nuxt-content :class="titleClass" :document="homeTitle" />
               </div>
               <div
                 class="text--primary font-weight-thin"
@@ -67,7 +67,7 @@
           position: 'absolute',
           left: '0',
           height: '90%',
-          opacity: '.3'
+          opacity: '.15'
         }
       ]"
     >

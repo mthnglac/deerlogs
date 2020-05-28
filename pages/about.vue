@@ -19,12 +19,15 @@
           <v-spacer />
           <v-col cols="12" sm="12" md="12" lg="12" xl="12" align-self="center">
             <v-card-title class="custom-text-zone card-title">
-              <div id="entry" class="font-weight-black" :class="titleClass">
-                <nuxt-content :document="aboutTitle" />
+              <div id="entry" class="font-weight-black">
+                <nuxt-content :class="titleClass" :document="aboutTitle" />
               </div>
             </v-card-title>
             <v-card-text class="custom-text-zone">
-              <nuxt-content :document="aboutDescription" />
+              <nuxt-content
+                :class="descriptionClass"
+                :document="aboutDescription"
+              />
             </v-card-text>
           </v-col>
           <v-spacer />
@@ -84,6 +87,12 @@ export default {
       return {
         headline: this.$vuetify.breakpoint.xsOnly,
         'display-2': this.$vuetify.breakpoint.smAndUp
+      }
+    },
+    descriptionClass() {
+      return {
+        'body-2': this.$vuetify.breakpoint.xsOnly,
+        'body-1': this.$vuetify.breakpoint.smAndUp
       }
     }
   },
