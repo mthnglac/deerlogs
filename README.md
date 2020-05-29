@@ -1,6 +1,6 @@
 # deerlogs
 
-> DeerLogs - Client
+> Mr. Mete's DeerLogs
 
 ## Build Setup
 
