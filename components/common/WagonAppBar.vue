@@ -58,8 +58,8 @@ export default {
         { title: 'Skills', icon: 'mdi-cog-outline', link: '/skills' },
         // { title: 'Blog', icon: 'mdi-coffee-outline', link: '/blog' },
         // { title: 'My Work', icon: 'mdi-eye-outline', link: '/portfolio' },
-        { title: 'Contact', icon: 'mdi-email-outline', link: '/contact' },
-        { title: 'Contact', icon: 'mdi-email-outline', link: '/panel' }
+        { title: 'Contact', icon: 'mdi-email-outline', link: '/contact' }
+        // { title: 'Contact', icon: 'mdi-email-outline', link: '/panel' }
       ],
       itemsSocial: [
         {
