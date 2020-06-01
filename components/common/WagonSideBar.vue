@@ -97,7 +97,7 @@ export default {
         {
           title: 'GitHub',
           icon: 'mdi-github',
-          link: 'https://github.com/metehanglc'
+          link: 'https://github.com/mthnglac'
         },
         {
           title: 'LinkedIn',
