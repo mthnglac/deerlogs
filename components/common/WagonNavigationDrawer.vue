@@ -47,14 +47,14 @@ export default {
         { title: 'Skills', icon: 'mdi-cog-outline', link: '/skills' },
         // { title: 'Blog', icon: 'mdi-coffee-outline', link: '/blog' },
         // { title: 'My Work', icon: 'mdi-eye-outline', link: '/portfolio' },
-        { title: 'Contact', icon: 'mdi-email-outline', link: '/contact' }
+        { title: 'Contact', icon: 'mdi-email-outline', link: '/contact' },
       ],
-      right: true
+      right: true,
     }
   },
   computed: {
     ...mapGetters({
-      getClipped: 'navbar/getClipped'
+      getClipped: 'navbar/getClipped',
     }),
     rightDrawer: {
       get() {
@@ -62,9 +62,9 @@ export default {
       },
       set(v) {
         return this.$store.commit('navbar/setRightDrawer', v)
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>
 

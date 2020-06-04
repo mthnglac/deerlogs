@@ -93,7 +93,7 @@ export default {
     return {
       windowWidth: 0,
       windowHeight: 0,
-      mainLogoSrc: '/logo-main.png'
+      mainLogoSrc: '/logo-main.png',
     }
   },
   computed: {
@@ -103,7 +103,7 @@ export default {
           'z-index': '1',
           position: 'absolute',
           left: '0',
-          height: '90%'
+          height: '90%',
         }
       }
       return null
@@ -116,14 +116,14 @@ export default {
           top: '0%',
           right: '11%',
           bottom: '15%',
-          left: '28%'
+          left: '28%',
         }
       }
       return null
-    }
+    },
   },
   mounted() {
-    this.$nextTick(function() {
+    this.$nextTick(() => {
       window.addEventListener('resize', this.getWindowWidth)
       window.addEventListener('resize', this.getWindowHeight)
       // Init
@@ -141,8 +141,8 @@ export default {
     },
     getWindowHeight(event) {
       this.windowHeight = document.documentElement.clientHeight
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -10,17 +10,11 @@
         <div>
           <span class="headline">Cafe Badilico</span>
           <div class="d-flex">
-            <v-rating
-              color="amber"
-              dense
-              half-increments
-              readonly
-              size="14"
-            ></v-rating>
+            <v-rating color="amber" dense half-increments readonly size="14" />
             <div class="ml-2 grey--text text--darken-2"></div>
           </div>
         </div>
-        <v-spacer></v-spacer>
+        <v-spacer />
         <v-btn icon class="mr-0">
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
@@ -31,7 +25,7 @@
 
 <script>
 export default {
-  name: 'WagonHover'
+  name: 'WagonHover',
 }
 </script>
 

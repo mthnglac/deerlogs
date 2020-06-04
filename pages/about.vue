@@ -79,28 +79,28 @@ export default {
   data() {
     return {
       title: 'About Me',
-      mainLogoSrc: '/logo-main.png'
+      mainLogoSrc: '/logo-main.png',
     }
   },
   computed: {
     titleClass() {
       return {
         headline: this.$vuetify.breakpoint.xsOnly,
-        'display-2': this.$vuetify.breakpoint.smAndUp
+        'display-2': this.$vuetify.breakpoint.smAndUp,
       }
     },
     descriptionClass() {
       return {
         'body-2': this.$vuetify.breakpoint.xsOnly,
-        'body-1': this.$vuetify.breakpoint.smAndUp
+        'body-1': this.$vuetify.breakpoint.smAndUp,
       }
-    }
+    },
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>
 

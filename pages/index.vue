@@ -31,7 +31,7 @@
               </div>
               <div
                 class="text--primary font-weight-thin"
-                style="letter-spacing: .4vw;"
+                style="letter-spacing: 0.4vw;"
               >
                 <nuxt-content :document="homeFootNote" />
               </div>
@@ -67,8 +67,8 @@
           position: 'absolute',
           left: '0',
           height: '90%',
-          opacity: '.15'
-        }
+          opacity: '.15',
+        },
       ]"
     >
       <v-card
@@ -105,22 +105,22 @@ export default {
   data() {
     return {
       title: 'Home',
-      mainLogoSrc: '/logo-main.png'
+      mainLogoSrc: '/logo-main.png',
     }
   },
   computed: {
     titleClass() {
       return {
         headline: this.$vuetify.breakpoint.xsOnly,
-        'display-2': this.$vuetify.breakpoint.smAndUp
+        'display-2': this.$vuetify.breakpoint.smAndUp,
       }
-    }
+    },
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>
 
