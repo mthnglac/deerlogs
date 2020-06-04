@@ -41,7 +41,7 @@
               <div
                 v-for="item in itemsSocial"
                 :key="item.id"
-                style="padding-right: 5%"
+                style="padding-right: 5%;"
               >
                 <v-btn :href="item.link" fab target="_blank">
                   <v-icon size="40">{{ item.icon }}</v-icon>
@@ -75,8 +75,8 @@
           position: 'absolute',
           left: '0',
           height: '90%',
-          opacity: '.15'
-        }
+          opacity: '.15',
+        },
       ]"
     >
       <v-card
@@ -141,51 +141,52 @@ export default {
         {
           title: 'Twitter',
           icon: 'mdi-twitter',
-          link: 'https://twitter.com/metehanglc'
+          link: 'https://twitter.com/metehanglc',
         },
         {
           title: 'GitHub',
           icon: 'mdi-github',
-          link: 'https://github.com/mthnglac'
+          link: 'https://github.com/mthnglac',
         },
         {
           title: 'LinkedIn',
           icon: 'mdi-linkedin',
-          link: 'https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/'
+          link:
+            'https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/',
         },
         {
           title: 'SoundCloud',
           icon: 'mdi-soundcloud',
-          link: 'https://soundcloud.com/metehan-g-la'
-        }
+          link: 'https://soundcloud.com/metehan-g-la',
+        },
         // {
         //   title: 'Facebook',
         //   icon: 'mdi-facebook',
         //   link: 'https://www.facebook.com/metehan.gulac'
         // }
         // { title: 'Feed', icon: 'mdi-rss', link: 'https://google.com' }
-      ]
+      ],
     }
   },
   computed: {
     titleClass() {
       return {
         headline: this.$vuetify.breakpoint.xsOnly,
-        'display-2': this.$vuetify.breakpoint.smAndUp
+        'display-2': this.$vuetify.breakpoint.smAndUp,
       }
     },
     descriptionClass() {
       return {
         'body-2': this.$vuetify.breakpoint.xsOnly,
-        'body-1': this.$vuetify.breakpoint.smAndUp
+        'body-1': this.$vuetify.breakpoint.smAndUp,
       }
-    }
+    },
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>
 

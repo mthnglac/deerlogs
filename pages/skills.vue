@@ -40,7 +40,7 @@
               <div
                 v-for="item in itemsSkills"
                 :key="item.id"
-                style="padding-right: 5%"
+                style="padding-right: 5%;"
               >
                 <v-icon size="40">{{ item.icon }}</v-icon>
               </div>
@@ -71,8 +71,8 @@
           position: 'absolute',
           left: '0',
           height: '90%',
-          opacity: '.15'
-        }
+          opacity: '.15',
+        },
       ]"
     >
       <v-card
@@ -137,42 +137,42 @@ export default {
       itemsSkills: [
         {
           title: 'Python',
-          icon: 'mdi-language-python'
+          icon: 'mdi-language-python',
         },
         {
           title: 'Javascript',
-          icon: 'mdi-language-javascript'
+          icon: 'mdi-language-javascript',
         },
         {
           title: 'Vue',
-          icon: 'mdi-vuejs'
+          icon: 'mdi-vuejs',
         },
         {
           title: 'React',
-          icon: 'mdi-react'
-        }
-      ]
+          icon: 'mdi-react',
+        },
+      ],
     }
   },
   computed: {
     titleClass() {
       return {
         headline: this.$vuetify.breakpoint.xsOnly,
-        'display-2': this.$vuetify.breakpoint.smAndUp
+        'display-2': this.$vuetify.breakpoint.smAndUp,
       }
     },
     descriptionClass() {
       return {
         'body-2': this.$vuetify.breakpoint.xsOnly,
-        'body-1': this.$vuetify.breakpoint.smAndUp
+        'body-1': this.$vuetify.breakpoint.smAndUp,
       }
-    }
+    },
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>
 

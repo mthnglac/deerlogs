@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       usernameErrors: [],
-      passwordErrors: []
+      passwordErrors: [],
     }
   },
   layout: 'login',
@@ -24,7 +24,7 @@ export default {
       this.$axios
         .$post('/api/token/', {
           username: loginInfo.username,
-          password: loginInfo.password
+          password: loginInfo.password,
         })
         .then((resp) => {
           this.$auth.setToken('local', 'Bearer ' + resp.access)
@@ -45,7 +45,7 @@ export default {
             this.passwordErrors = []
             // const status = err.response.data.detail.status
             const {
-              response: { status }
+              response: { status },
             } = err
             if (status === 404) {
               this.usernameErrors = ['That user does not exist']
@@ -54,7 +54,7 @@ export default {
             }
           }
         })
-    }
-  }
+    },
+  },
 }
 </script>

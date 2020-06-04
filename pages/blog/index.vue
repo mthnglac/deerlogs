@@ -334,13 +334,13 @@ export default {
   data() {
     return {
       loading: true,
-      transition: 'scale-transition'
+      transition: 'scale-transition',
     }
   },
   computed: {
     showAllArticles() {
       return this.$store.getters['blog/getArticles']
-    }
-  }
+    },
+  },
 }
 </script>

@@ -9,6 +9,6 @@
 <script>
 export default {
   name: 'Panel',
-  middleware: 'auth'
+  middleware: 'auth',
 }
 </script>

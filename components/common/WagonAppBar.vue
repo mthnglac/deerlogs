@@ -58,42 +58,43 @@ export default {
         { title: 'Skills', icon: 'mdi-cog-outline', link: '/skills' },
         // { title: 'Blog', icon: 'mdi-coffee-outline', link: '/blog' },
         // { title: 'My Work', icon: 'mdi-eye-outline', link: '/portfolio' },
-        { title: 'Contact', icon: 'mdi-email-outline', link: '/contact' }
+        { title: 'Contact', icon: 'mdi-email-outline', link: '/contact' },
         // { title: 'Contact', icon: 'mdi-email-outline', link: '/panel' }
       ],
       itemsSocial: [
         {
           title: 'Twitter',
           icon: 'mdi-twitter',
-          link: 'https://twitter.com/metehanglc'
+          link: 'https://twitter.com/metehanglc',
         },
         {
           title: 'GitHub',
           icon: 'mdi-github',
-          link: 'https://github.com/mthnglac'
+          link: 'https://github.com/mthnglac',
         },
         {
           title: 'LinkedIn',
           icon: 'mdi-linkedin',
-          link: 'https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/'
+          link:
+            'https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/',
         },
         {
           title: 'SoundCloud',
           icon: 'mdi-soundcloud',
-          link: 'https://soundcloud.com/metehan-g-la'
-        }
+          link: 'https://soundcloud.com/metehan-g-la',
+        },
         // {
         //   title: 'Facebook',
         //   icon: 'mdi-facebook',
         //   link: 'https://www.facebook.com/metehan.gulac'
         // }
         // { title: 'Feed', icon: 'mdi-rss', link: 'https://google.com' }
-      ]
+      ],
     }
   },
   computed: {
     ...mapGetters({
-      getClipped: 'navbar/getClipped'
+      getClipped: 'navbar/getClipped',
     }),
     rightDrawer: {
       get() {
@@ -101,9 +102,9 @@ export default {
       },
       set(v) {
         return this.$store.commit('navbar/setRightDrawer', v)
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>
 

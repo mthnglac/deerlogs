@@ -31,25 +31,25 @@ export default {
   validations: {
     userInfo: {
       username: { required },
-      password: { required }
-    }
+      password: { required },
+    },
   },
   props: {
     submitForm: {
       type: Function,
-      required: true
+      required: true,
     },
     buttonText: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       userInfo: {
         username: 'stranger',
-        password: 'wwlaldsd123'
-      }
+        password: 'wwlaldsd123',
+      },
     }
   },
   computed: {
@@ -65,7 +65,7 @@ export default {
       if (!this.$v.userInfo.password.$dirty) return errors
       !this.$v.userInfo.password.required && errors.push('Password is required')
       return errors
-    }
+    },
   },
   methods: {
     submit() {
@@ -76,7 +76,7 @@ export default {
       this.$v.$reset()
       this.userInfo.username = ''
       this.userInfo.password = ''
-    }
-  }
+    },
+  },
 }
 </script>

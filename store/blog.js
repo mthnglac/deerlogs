@@ -7,7 +7,7 @@ export const state = () => ({
         username: 'Metok',
         firstName: 'Metehan',
         lastName: 'Gulac',
-        email: 'metok@gmail.com'
+        email: 'metok@gmail.com',
       },
       title: 'Gitarlar',
       slug: 'gitarlar',
@@ -28,7 +28,7 @@ export const state = () => ({
             username: 'JackAss',
             firstName: 'Jack',
             lastName: 'Ass',
-            email: 'jackass@gmail.com'
+            email: 'jackass@gmail.com',
           },
           content: 'bu olmamis be moruk',
           reply: [
@@ -39,10 +39,10 @@ export const state = () => ({
                 username: 'ahmetbaba',
                 firstName: 'Ahmet',
                 lastName: 'Cakal',
-                email: 'ahmetbaba@gmail.com'
-              }
-            }
-          ]
+                email: 'ahmetbaba@gmail.com',
+              },
+            },
+          ],
         },
         {
           author: {
@@ -50,12 +50,12 @@ export const state = () => ({
             username: 'AssBut',
             firstName: 'Ass',
             lastName: 'But',
-            email: 'assbut@gmail.com'
+            email: 'assbut@gmail.com',
           },
           content: 'sen makale yazma',
-          reply: []
-        }
-      ]
+          reply: [],
+        },
+      ],
     },
     {
       id: '2',
@@ -64,7 +64,7 @@ export const state = () => ({
         username: 'Metok',
         firstName: 'Metehan',
         lastName: 'Gulac',
-        email: 'metok@gmail.com'
+        email: 'metok@gmail.com',
       },
       title: 'Cicekler',
       slug: 'cicekler',
@@ -85,12 +85,12 @@ export const state = () => ({
             username: 'olejackson',
             firstName: 'Ole',
             lastName: 'Jackson',
-            email: 'olejackson@gmail.com'
+            email: 'olejackson@gmail.com',
           },
           content: 'yerler kaymiyo yalniz',
-          reply: []
-        }
-      ]
+          reply: [],
+        },
+      ],
     },
     {
       id: '3',
@@ -99,7 +99,7 @@ export const state = () => ({
         username: 'Metok',
         firstName: 'Metehan',
         lastName: 'Gulac',
-        email: 'metok@gmail.com'
+        email: 'metok@gmail.com',
       },
       title: 'Cicekler',
       slug: 'cicekler',
@@ -120,12 +120,12 @@ export const state = () => ({
             username: 'olejackson',
             firstName: 'Ole',
             lastName: 'Jackson',
-            email: 'olejackson@gmail.com'
+            email: 'olejackson@gmail.com',
           },
           content: 'yerler kaymiyo yalniz',
-          reply: []
-        }
-      ]
+          reply: [],
+        },
+      ],
     },
     {
       id: '4',
@@ -134,7 +134,7 @@ export const state = () => ({
         username: 'Metok',
         firstName: 'Metehan',
         lastName: 'Gulac',
-        email: 'metok@gmail.com'
+        email: 'metok@gmail.com',
       },
       title: 'Cicekler',
       slug: 'cicekler',
@@ -155,14 +155,14 @@ export const state = () => ({
             username: 'olejackson',
             firstName: 'Ole',
             lastName: 'Jackson',
-            email: 'olejackson@gmail.com'
+            email: 'olejackson@gmail.com',
           },
           content: 'yerler kaymiyo yalniz',
-          reply: []
-        }
-      ]
-    }
-  ]
+          reply: [],
+        },
+      ],
+    },
+  ],
 })
 
 // export const getters = {
@@ -176,7 +176,7 @@ export const state = () => ({
 export const mutations = {
   setArticles(state, payload) {
     state.articles = payload
-  }
+  },
 }
 
 // export const actions = {

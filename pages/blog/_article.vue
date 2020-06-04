@@ -46,7 +46,7 @@ export default {
       return this.$store.getters['blog/getArticles'].find(
         (v) => v.slug === this.$route.params.article
       )
-    }
-  }
+    },
+  },
 }
 </script>

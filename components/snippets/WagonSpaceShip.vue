@@ -4,19 +4,19 @@
       <div class="spaceshipBody">
         <div class="spaceshipTop"></div>
         <div class="spaceshipWindows">
-          <span></span>
-          <span></span>
+          <span />
+          <span />
         </div>
       </div>
       <div class="spaceshipBottom">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span />
+        <span />
+        <span />
       </div>
       <div class="fire">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span />
+        <span />
+        <span />
         <div class="glow"></div>
       </div>
     </div>
@@ -110,12 +110,11 @@ export default {
         btnLand.classList.remove('active')
       }
     }
-
     // eslint-disable-next-line no-unused-vars
     function stop() {
       fire.classList.remove('burn')
     }
-  }
+  },
 }
 </script>
 

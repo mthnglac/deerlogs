@@ -4,18 +4,29 @@
     <div class="head">
       <div class="helmet"><span class="left" /><span class="right" /></div>
       <div class="eyes"><span class="left" /><span class="right" /></div>
-      <span class="grill"
-        ><span class="left"/><span class="center"/><span class="right"/></span
-      ><span class="mask"
-        ><span class="top"/><span class="left"/><span class="center"/><span
-          class="right"/></span
-      ><span class="line" />
+      <span class="grill">
+        <span class="left" />
+        <span class="center" />
+        <span class="right" />
+      </span>
+      <span class="mask">
+        <span class="top" />
+        <span class="left" />
+        <span class="center" />
+        <span class="right" />
+      </span>
+      <span class="line" />
     </div>
     <div class="torso">
-      <span class="neck"
-        ><span class="left"/><span class="center"/><span class="right"/><span
-          class="bottom"/></span
-      ><span class="belt"><span class="center"/></span>
+      <span class="neck">
+        <span class="left" />
+        <span class="center" />
+        <span class="right" />
+        <span class="bottom" />
+      </span>
+      <span class="belt">
+        <span class="center" />
+      </span>
       <div class="plate">
         <span class="red_top" /><span class="red_center" /><span
           class="red_bottom"
@@ -34,7 +45,7 @@
 
 <script>
 export default {
-  name: 'WagonDartVader'
+  name: 'WagonDartVader',
 }
 </script>
 

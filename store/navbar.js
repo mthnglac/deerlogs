@@ -1,6 +1,6 @@
 export const state = () => ({
   rightDrawer: false,
-  clipped: false
+  clipped: false,
 })
 
 export const getters = {
@@ -9,13 +9,13 @@ export const getters = {
   },
   getClipped(state) {
     return state.clipped
-  }
+  },
 }
 
 export const mutations = {
   setRightDrawer(state, data) {
     state.rightDrawer = data
-  }
+  },
 }
 //
 // export const actions = {
