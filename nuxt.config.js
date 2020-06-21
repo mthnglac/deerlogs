@@ -63,7 +63,17 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxt/content',
+    '@nuxtjs/sitemap',
   ],
+  /*
+   ** sitemap
+   */
+  sitemap: {
+    path: '/sitemap.xml',
+    cacheTime: 1000 * 60 * 60 * 2,
+    trailingSlash: true,
+    gzip: true,
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
