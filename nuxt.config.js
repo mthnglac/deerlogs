@@ -1,13 +1,22 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  /*
+   ** Nuxt rendering mode
+   ** See https://nuxtjs.org/api/configuration-mode
+   */
   mode: 'universal',
   /*
+   ** Nuxt target
+   ** See https://nuxtjs.org/api/configuration-target
+   */
+  target: 'static',
+  /*
    ** Headers of the page
+   ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    // titleTemplate: '%s - ' + process.env.npm_package_name,
-    titleTemplate: '%s - ' + 'Metehan Gülaç Portfolio',
+    titleTemplate: '%s - ' + 'Metehan Gulac Portfolio',
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
@@ -30,8 +39,14 @@ export default {
   css: ['~/assets/main.scss'],
   /*
    ** Plugins to load before mounting the App
+   ** https://nuxtjs.org/guide/plugins
    */
   plugins: [],
+  /*
+   ** Auto import components
+   ** See https://nuxtjs.org/api/configuration-components
+   */
+  components: true,
   /*
    ** Nuxt.js dev-modules
    */
@@ -40,7 +55,6 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
     '@nuxt/components',
-    // google analytics
     '@nuxtjs/google-analytics',
   ],
   /*
@@ -60,8 +74,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/sitemap',
   ],
@@ -69,16 +82,24 @@ export default {
    ** sitemap
    */
   sitemap: {
+    hostname: 'https://metehangulac.com',
     path: '/sitemap.xml',
-    cacheTime: 1000 * 60 * 60 * 2,
-    trailingSlash: true,
     gzip: true,
   },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
   axios: {},
+  /*
+   ** Content module configuration
+   ** See https://content.nuxtjs.org/configuration
+   */
+  content: {},
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -102,12 +123,7 @@ export default {
   },
   /*
    ** Build configuration
+   ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {},
-  },
-  target: 'static',
+  build: {},
 }

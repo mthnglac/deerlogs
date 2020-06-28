@@ -1,7 +1,5 @@
 # deerlogs
 
-> Mr. Mete's DeerLogs
-
 ## Build Setup
 
 ```bash

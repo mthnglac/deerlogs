@@ -3,11 +3,11 @@
     <WagonSideBar class="hidden-sm-and-down" />
     <WagonAppBar class="hidden-md-and-up" app />
     <WagonNavigationDrawer />
-    <v-content class="pa-0">
+    <v-main class="pa-0">
       <v-container fluid fill-height>
         <nuxt />
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
