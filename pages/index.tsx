@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ProTip from '../src/ProTip';
-import Link from '../src/Link';
+import Link from 'next/link'
 import Copyright from '../src/Copyright';
 
 export default function Index() {
@@ -13,7 +13,7 @@ export default function Index() {
         <Typography variant="h4" component="h1" gutterBottom>
           Next.js v5-beta with TypeScript example
         </Typography>
-        <Link href="/about" color="secondary">
+        <Link href="/about">
           Go to the about page
         </Link>
         <ProTip />
