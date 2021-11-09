@@ -1,5 +1,5 @@
 import * as React from 'react'
-import singletonRouter, { useRouter } from 'next/router'
+import singletonRouter from 'next/router'
 import { render, fireEvent } from '@testing-library/react'
 import WagonSideBar from '../../src/components/WagonSideBar'
 import mockRouter from 'next-router-mock';
@@ -33,6 +33,7 @@ describe('WagonSideBar component', () => {
 		const homeIcon = getByTestId('home-icon');
 
 		expect(homeButton).toBeVisible()
+		expect(homeButton).toHaveAttribute('href', '/')
 		expect(homeIcon).toBeVisible()
 	})
 
@@ -51,6 +52,7 @@ describe('WagonSideBar component', () => {
 		const aboutIcon = getByTestId('about-icon');
 
 		expect(aboutButton).toBeVisible()
+		expect(aboutButton).toHaveAttribute('href', '/about')
 		expect(aboutIcon).toBeVisible()
 	})
 
@@ -69,6 +71,7 @@ describe('WagonSideBar component', () => {
 		const skillsIcon = getByTestId('skills-icon');
 
 		expect(skillsButton).toBeVisible()
+		expect(skillsButton).toHaveAttribute('href', '/skills')
 		expect(skillsIcon).toBeVisible()
 	})
 
@@ -87,6 +90,7 @@ describe('WagonSideBar component', () => {
 		const contactIcon = getByTestId('contact-icon');
 
 		expect(contactButton).toBeVisible()
+		expect(contactButton).toHaveAttribute('href', '/contact')
 		expect(contactIcon).toBeVisible()
 	})
 
@@ -105,6 +109,7 @@ describe('WagonSideBar component', () => {
 		const twitterIcon = getByTestId('twitter-icon');
 
 		expect(twitterButton).toBeVisible()
+		expect(twitterButton).toHaveAttribute('href', 'https://twitter.com/metehanglc')
 		expect(twitterIcon).toBeVisible()
 	})
 
@@ -115,6 +120,7 @@ describe('WagonSideBar component', () => {
 		const githubIcon = getByTestId('github-icon');
 
 		expect(githubButton).toBeVisible()
+		expect(githubButton).toHaveAttribute('href', 'https://github.com/mthnglac')
 		expect(githubIcon).toBeVisible()
 	})
 
@@ -125,6 +131,7 @@ describe('WagonSideBar component', () => {
 		const linkedinIcon = getByTestId('linkedin-icon');
 
 		expect(linkedinButton).toBeVisible()
+		expect(linkedinButton).toHaveAttribute('href', 'https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/')
 		expect(linkedinIcon).toBeVisible()
 	})
 
@@ -135,6 +142,7 @@ describe('WagonSideBar component', () => {
 		const soundcloudIcon = getByTestId('soundcloud-icon');
 
 		expect(soundcloudButton).toBeVisible()
+		expect(soundcloudButton).toHaveAttribute('href', 'https://soundcloud.com/metehan-g-la')
 		expect(soundcloudIcon).toBeVisible()
 	})
 })
