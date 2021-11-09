@@ -182,37 +182,37 @@ export default function PermanentDrawerLeft() {
 					</List>
 					<List>
 						<CustomizedListItem disablePadding>
-							<CustomizedIconButton
+							<CustomizedMuiLink
 								href={SocialLinks.TWITTER}
 								target="_blank"
-								disableRipple
+								rel="noopener"
 								aria-label="go to my Twitter page"
 								data-testid="twitter-button"
 							>
 								<TwitterIcon sx={{ fontSize: 13 }} data-testid="twitter-icon" />
-							</CustomizedIconButton>
+							</CustomizedMuiLink>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
-							<CustomizedIconButton
+							<CustomizedMuiLink
 								href={SocialLinks.GITHUB}
 								target="_blank"
-								disableRipple
+								rel="noopener"
 								aria-label="go to my Github page"
 								data-testid="github-button"
 							>
 								<GitHubIcon sx={{ fontSize: 13 }} data-testid="github-icon" />
-							</CustomizedIconButton>
+							</CustomizedMuiLink>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
-							<CustomizedIconButton
+							<CustomizedMuiLink
 								href={SocialLinks.LINKEDIN}
 								target="_blank"
-								disableRipple
+								rel="noopener"
 								aria-label="go to my LinkedIn page"
 								data-testid="linkedin-button"
 							>
 								<LinkedInIcon sx={{ fontSize: 13 }} data-testid="linkedin-icon" />
-							</CustomizedIconButton>
+							</CustomizedMuiLink>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
 							<CustomizedMuiLink
