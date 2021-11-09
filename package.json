@@ -26,13 +26,13 @@
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test dev http://localhost:3000 cypress",
-    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless"
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
   "devDependencies": {
     "@cypress/react": "^5.10.3",
     "@cypress/webpack-dev-server": "^1.7.0",
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.2",
     "@types/node": "latest",

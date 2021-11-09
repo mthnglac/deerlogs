@@ -26,7 +26,8 @@
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"incremental": true
+		"incremental": true,
+    "types": ["cypress", "@testing-library/cypress"]
 	},
   "exclude": [
     "node_modules"

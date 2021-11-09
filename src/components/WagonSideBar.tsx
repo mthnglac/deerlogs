@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import Link from 'next/link'
+import NextLink from 'next/link'
+import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import Box, { BoxProps } from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -63,6 +64,36 @@ const CustomizedFontAwesomeIcon = styled(FontAwesomeIcon)<FontAwesomeIconProps>(
 	height: '1em',
 	fontSize: 13,
 });
+const CustomizedMuiLink = styled(MuiLink)<MuiLinkProps>({
+	display: 'inline-flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	position: 'relative',
+	boxSizing: 'border-box',
+	backgroundColor: 'transparent',
+	outline: 0,
+	border: 0,
+	margin: 0,
+	padding: 8,
+	cursor: 'pointer',
+	userSelect: 'none',
+	textDecoration: 'none',
+	textAlign: 'center',
+	flex: '0 0 auto',
+	fontSize: '1.5rem',
+	overflow: 'visible',
+	transition: 'background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+	borderRadius: '50%',
+	color: "#4d4d4e",
+	'&:hover': {
+		backgroundColor: 'transparent',
+		color: '#08fdd8'
+	},
+	'&.active': {
+		backgroundColor: 'transparent',
+		color: '#08fdd8'
+	}
+});
 
 export default function PermanentDrawerLeft() {
 	const router = useRouter();
@@ -88,7 +119,7 @@ export default function PermanentDrawerLeft() {
 				}}
 			>
 				<CustomizedBox>
-					<Link href="/" passHref>
+					<NextLink href="/" passHref>
 						<CustomizedAvatarBox>
 							<Image
 								alt="logo"
@@ -98,10 +129,10 @@ export default function PermanentDrawerLeft() {
 								data-testid="deer-image"
 							/>
 						</CustomizedAvatarBox>
-					</Link>
+					</NextLink>
 					<List>
 						<CustomizedListItem disablePadding>
-							<Link href="/" passHref>
+							<NextLink href="/" passHref>
 								<CustomizedIconButton
 									className={router.pathname === "/" ? "active" : ""}
 									disableRipple
@@ -110,10 +141,10 @@ export default function PermanentDrawerLeft() {
 								>
 									<HomeOutlinedIcon sx={{ fontSize: 24 }} data-testid="home-icon" />
 								</CustomizedIconButton>
-							</Link>
+							</NextLink>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
-							<Link href="/about" passHref>
+							<NextLink href="/about" passHref>
 								<CustomizedIconButton
 									className={router.pathname === "/about" ? "active" : ""}
 									disableRipple
@@ -122,10 +153,10 @@ export default function PermanentDrawerLeft() {
 								>
 									<AccountCircleOutlinedIcon sx={{ fontSize: 24 }} data-testid="about-icon" />
 								</CustomizedIconButton>
-							</Link>
+							</NextLink>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
-							<Link href="/skills" passHref>
+							<NextLink href="/skills" passHref>
 								<CustomizedIconButton
 									className={router.pathname === "/skills" ? "active" : ""}
 									disableRipple
@@ -134,10 +165,10 @@ export default function PermanentDrawerLeft() {
 								>
 									<SettingsOutlinedIcon sx={{ fontSize: 24 }} data-testid="skills-icon" />
 								</CustomizedIconButton>
-							</Link>
+							</NextLink>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
-							<Link href="/contact" passHref>
+							<NextLink href="/contact" passHref>
 								<CustomizedIconButton
 									className={router.pathname === "/contact" ? "active" : ""}
 									disableRipple
@@ -146,7 +177,7 @@ export default function PermanentDrawerLeft() {
 								>
 									<EmailOutlinedIcon sx={{ fontSize: 24 }} data-testid="contact-icon" />
 								</CustomizedIconButton>
-							</Link>
+							</NextLink>
 						</CustomizedListItem>
 					</List>
 					<List>
@@ -184,15 +215,15 @@ export default function PermanentDrawerLeft() {
 							</CustomizedIconButton>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
-							<CustomizedIconButton
+							<CustomizedMuiLink
 								href={SocialLinks.SOUNDCLOUD}
 								target="_blank"
-								disableRipple
+								rel="noopener"
 								aria-label="go to my Soundcloud page"
 								data-testid="soundcloud-button"
 							>
 								<CustomizedFontAwesomeIcon icon={faSoundcloud} data-testid="soundcloud-icon" />
-							</CustomizedIconButton>
+							</CustomizedMuiLink>
 						</CustomizedListItem>
 					</List>
 				</CustomizedBox>
