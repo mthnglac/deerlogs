@@ -143,6 +143,7 @@ export default function PermanentDrawerLeft() {
 										objectFit: 'fill',
 									}
 								}}
+                data-testid="deer-image"
 							/>
 						</CustomizedAvatarBox>
 					</NextLink>
