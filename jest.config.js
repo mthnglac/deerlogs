@@ -7,7 +7,11 @@ module.exports = {
     '!**/node_modules/**',
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
+  testPathIgnorePatterns: [
+		'<rootDir>/node_modules/',
+		'<rootDir>/.next/',
+		'<rootDir>/cypress/'
+	],
 	transformIgnorePatterns: [
 		'/node_modules/',
 		'^.+\\.module\\.(css|sass|scss)$',
