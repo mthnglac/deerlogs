@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useRouter } from 'next/router'
-import Image from 'next/image'
+import Avatar, { AvatarProps } from '@mui/material/Avatar';
 import NextLink from 'next/link'
 import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import Box, { BoxProps } from '@mui/material/Box';
@@ -29,6 +29,13 @@ enum SocialLinks {
 const DRAWER_WIDTH: number = 60;
 const LOGO_PATH: string = "/images/logo_deer_no_shadow.png";
 
+const RootBox = styled(Box)(({ theme }) => ({
+	display: 'flex',
+
+	[theme.breakpoints.down('sm')]: {
+		display: 'none',
+	},
+}));
 const CustomizedBox = styled(Box)<BoxProps>({
 	display: 'flex',
 	flexDirection: 'column',
@@ -38,10 +45,17 @@ const CustomizedBox = styled(Box)<BoxProps>({
 });
 const CustomizedAvatarBox = styled(Box)<BoxProps>({
 	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
 	position: 'relative',
 	width: 60,
 	height: 104,
 	backgroundColor: '#000000',
+});
+const CustomizedAvatar = styled(Avatar)<AvatarProps>({
+	width: 60,
+	height: 'unset',
+	borderRadius: 0,
 });
 const CustomizedListItem = styled(ListItem)<ListItemProps>({
 	justifyContent: 'center',
@@ -99,7 +113,7 @@ export default function PermanentDrawerLeft() {
 	const router = useRouter();
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <RootBox>
       <CssBaseline />
 			<Drawer
 				sx={{
@@ -121,12 +135,14 @@ export default function PermanentDrawerLeft() {
 				<CustomizedBox>
 					<NextLink href="/" passHref>
 						<CustomizedAvatarBox>
-							<Image
+							<CustomizedAvatar
 								alt="logo"
 								src={LOGO_PATH}
-								layout="fill"
-								objectFit="contain"
-								data-testid="deer-image"
+								imgProps={{
+									style: {
+										objectFit: 'fill',
+									}
+								}}
 							/>
 						</CustomizedAvatarBox>
 					</NextLink>
@@ -228,6 +244,6 @@ export default function PermanentDrawerLeft() {
 					</List>
 				</CustomizedBox>
 			</Drawer>
-    </Box>
+    </RootBox>
   );
 }
