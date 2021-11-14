@@ -26,8 +26,7 @@
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"incremental": true,
-    "types": ["cypress", "@testing-library/cypress"]
+		"incremental": true
 	},
   "exclude": [
     "node_modules"
@@ -35,7 +34,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-		"../node_modules/cypress",
     "**/*.tsx"
   ]
 }
