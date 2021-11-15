@@ -55,7 +55,7 @@ const CustomizedAvatarBox = styled(Box)<BoxProps>({
 	backgroundColor: 'transparent',
 });
 const CustomizedAvatar = styled(Avatar)<AvatarProps>({
-	width: 48,
+	width: 42,
 	height: 'unset',
 	borderRadius: 0,
 });
@@ -212,13 +212,13 @@ export default function WagonAppBar() {
           </Stack>
           <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
 						<IconButton
-							size="large"
-							edge="start"
+							disableRipple
+							edge="end"
 							color="inherit"
 							aria-label="open drawer"
-							sx={{ mr: 2 }}
+							sx={{ color: "#08fdd8" }}
 						>
-							<MenuIcon />
+							<MenuIcon sx={{ fontSize: 35 }} data-testid="menu-icon" />
 						</IconButton>
 					</Box>
         </CustomizedToolbar>
