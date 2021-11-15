@@ -6,7 +6,13 @@ import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import AppBar, { AppBarProps } from '@mui/material/AppBar';
 import Box, { BoxProps } from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import Toolbar, { ToolbarProps } from '@mui/material/Toolbar';
+import Drawer from '@mui/material/Drawer';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -16,6 +22,8 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { faSoundcloud } from '@fortawesome/free-brands-svg-icons';
 import { styled } from '@mui/material/styles';
@@ -26,7 +34,9 @@ enum SocialLinks {
 	LINKEDIN = "https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/",
 	SOUNDCLOUD = "https://soundcloud.com/metehan-g-la",
 };
+type Anchor = 'top' | 'left' | 'bottom' | 'right';
 const LOGO_PATH: string = "/images/logo_deer_no_shadow.png";
+const DRAWER_WIDTH: number = 180;
 
 const RootBox = styled(Box)<BoxProps>(({ theme }) => ({
 	flexGrow: 1,
@@ -109,6 +119,54 @@ const CustomizedMuiLink = styled(MuiLink)<MuiLinkProps>({
 
 export default function WagonAppBar() {
 	const router = useRouter();
+	const [state, setState] = React.useState({
+		top: false,
+		left: false,
+		bottom: false,
+		right: false,
+	});
+
+	const toggleDrawer = (anchor: Anchor, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+		if (
+			event.type === 'keydown' &&
+				((event as React.KeyboardEvent).key === 'Tab' ||
+					(event as React.KeyboardEvent).key === 'Shift')
+		) {
+			return;
+		}
+
+		setState({ ...state, [anchor]: open });
+	};
+
+	const list = (anchor: Anchor) => (
+		<Box
+			role="presentation"
+			onClick={toggleDrawer(anchor, false)}
+			onKeyDown={toggleDrawer(anchor, false)}
+		>
+			<List>
+				{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+					<ListItem button key={text}>
+						<ListItemIcon>
+							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+						</ListItemIcon>
+						<ListItemText primary={text} />
+					</ListItem>
+				))}
+			</List>
+			<Divider />
+			<List>
+				{['All mail', 'Trash', 'Spam'].map((text, index) => (
+					<ListItem button key={text}>
+						<ListItemIcon>
+							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+						</ListItemIcon>
+						<ListItemText primary={text} />
+					</ListItem>
+				))}
+			</List>
+		</Box>
+	);
 
   return (
     <RootBox data-testid="app-bar-root-box">
@@ -217,12 +275,25 @@ export default function WagonAppBar() {
 							color="inherit"
 							aria-label="open drawer"
 							sx={{ color: "#08fdd8" }}
+							onClick={toggleDrawer("right", true)}
 						>
 							<MenuIcon sx={{ fontSize: 35 }} data-testid="menu-icon" />
 						</IconButton>
 					</Box>
         </CustomizedToolbar>
       </CustomizedAppBar>
+			<React.Fragment key={"right"}>
+				<Drawer
+					anchor={"right"}
+					open={state["right"]}
+					onClose={toggleDrawer("right", false)}
+					sx={{
+						width: DRAWER_WIDTH,
+					}}
+				>
+					{list("right")}
+				</Drawer>
+			</React.Fragment>
     </RootBox>
   );
 }
