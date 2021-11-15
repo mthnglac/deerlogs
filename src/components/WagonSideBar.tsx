@@ -5,7 +5,6 @@ import NextLink from 'next/link'
 import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import Box, { BoxProps } from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
 import List from '@mui/material/List';
 import ListItem, { ListItemProps } from '@mui/material/ListItem';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
@@ -32,7 +31,7 @@ const LOGO_PATH: string = "/images/logo_deer_no_shadow.png";
 const RootBox = styled(Box)(({ theme }) => ({
 	display: 'flex',
 
-	[theme.breakpoints.down('sm')]: {
+	[theme.breakpoints.down('md')]: {
 		display: 'none',
 	},
 }));
@@ -113,8 +112,7 @@ export default function PermanentDrawerLeft() {
 	const router = useRouter();
 
   return (
-    <RootBox>
-      <CssBaseline />
+    <RootBox data-testid="side-bar-root-box">
 			<Drawer
 				sx={{
 					width: DRAWER_WIDTH,
