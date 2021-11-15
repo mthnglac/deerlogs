@@ -129,7 +129,7 @@ export default function WagonAppBar() {
 						</CustomizedAvatarBox>
 					</NextLink>
           <Box sx={{ flexGrow: 1 }} />
-          <Stack direction="row" spacing={4} sx={{ visibility: { xs: 'hidden', sm: 'visible' } }}>
+          <Stack direction="row" spacing={4} sx={{ display: { xs: 'none', sm: 'flex' } }}>
 						<NextLink href="/" passHref>
 							<CustomizedIconButton
 								className={router.pathname === "/" ? "active" : ""}
@@ -172,7 +172,7 @@ export default function WagonAppBar() {
 						</NextLink>
           </Stack>
           <Box sx={{ flexGrow: 0.5 }} />
-          <Stack direction="row" spacing={2} sx={{ visibility: { xs: 'hidden', sm: 'visible' } }}>
+          <Stack direction="row" spacing={2} sx={{ display: { xs: 'none', sm: 'flex' } }}>
 						<CustomizedMuiLink
 							href={SocialLinks.TWITTER}
 							target="_blank"
