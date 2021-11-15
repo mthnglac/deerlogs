@@ -28,7 +28,7 @@ enum SocialLinks {
 const DRAWER_WIDTH: number = 60;
 const LOGO_PATH: string = "/images/logo_deer_no_shadow.png";
 
-const RootBox = styled(Box)(({ theme }) => ({
+const RootBox = styled(Box)<BoxProps>(({ theme }) => ({
 	display: 'flex',
 
 	[theme.breakpoints.down('md')]: {
@@ -41,6 +41,7 @@ const CustomizedBox = styled(Box)<BoxProps>({
 	justifyContent: 'space-between',
 	height: '100%',
 	backgroundColor: '#181818',
+	overflowY: 'hidden',
 });
 const CustomizedAvatarBox = styled(Box)<BoxProps>({
 	display: 'flex',
@@ -49,6 +50,7 @@ const CustomizedAvatarBox = styled(Box)<BoxProps>({
 	position: 'relative',
 	width: 60,
 	height: 104,
+	minHeight: 104,
 	backgroundColor: '#000000',
 });
 const CustomizedAvatar = styled(Avatar)<AvatarProps>({
