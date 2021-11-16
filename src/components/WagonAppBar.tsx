@@ -428,6 +428,7 @@ export default function WagonAppBar() {
 							borderLeft: '1px solid hsla(0,0%,100%,.12)',
 						},
 					}}
+					data-testid="drawer"
 				>
 					{list("right")}
 				</Drawer>
