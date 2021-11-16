@@ -7,7 +7,6 @@ import AppBar, { AppBarProps } from '@mui/material/AppBar';
 import Box, { BoxProps } from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -22,8 +21,6 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { faSoundcloud } from '@fortawesome/free-brands-svg-icons';
 import { styled } from '@mui/material/styles';
@@ -33,6 +30,12 @@ enum SocialLinks {
 	GITHUB = "https://github.com/mthnglac",
 	LINKEDIN = "https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/",
 	SOUNDCLOUD = "https://soundcloud.com/metehan-g-la",
+};
+enum DrawerListItemNames {
+	HOME_PAGE = "Home",
+	ABOUT_PAGE = "About",
+	SKILLS_PAGE = "Skills",
+	CONTACT_PAGE = "Contact",
 };
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 const LOGO_PATH: string = "/images/logo_deer_no_shadow.png";
@@ -145,33 +148,162 @@ export default function WagonAppBar() {
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
 			<List>
-				{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-					<ListItem button key={text}>
-						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+				<NextLink href="/" passHref>
+					<ListItem
+						className={router.pathname === "/" ? "active" : ""}
+						button
+						disableRipple
+						aria-label="go to Home page"
+						data-testid="drawer-home-button"
+						sx={{
+							'&:hover': {
+								backgroundColor: 'transparent',
+								color: '#08fdd8'
+							},
+							'&.active': {
+								backgroundColor: 'transparent',
+								color: '#08fdd8'
+							},
+							marginBottom: 1,
+						}}
+					>
+						<ListItemIcon
+							className={router.pathname === "/" ? "active" : ""}
+							sx={{
+								'&:hover': {
+									backgroundColor: 'transparent',
+									color: '#08fdd8'
+								},
+								'&.active': {
+									backgroundColor: 'transparent',
+									color: '#08fdd8'
+								},
+							}}
+						>
+							<HomeOutlinedIcon sx={{ fontSize: 24 }} data-testid="home-icon" />
 						</ListItemIcon>
-						<ListItemText primary={text} />
+						<ListItemText primary={DrawerListItemNames.HOME_PAGE} />
 					</ListItem>
-				))}
-			</List>
-			<Divider />
-			<List>
-				{['All mail', 'Trash', 'Spam'].map((text, index) => (
-					<ListItem button key={text}>
-						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+				</NextLink>
+				<NextLink href="/about" passHref>
+					<ListItem
+						className={router.pathname === "/about" ? "active" : ""}
+						button
+						disableRipple
+						aria-label="go to About page"
+						data-testid="drawer-about-button"
+						sx={{
+							'&:hover': {
+								backgroundColor: 'transparent',
+								color: '#08fdd8'
+							},
+							'&.active': {
+								backgroundColor: 'transparent',
+								color: '#08fdd8'
+							},
+							marginBottom: 1,
+						}}
+					>
+						<ListItemIcon
+							className={router.pathname === "/about" ? "active" : ""}
+							sx={{
+								'&:hover': {
+									backgroundColor: 'transparent',
+									color: '#08fdd8'
+								},
+								'&.active': {
+									backgroundColor: 'transparent',
+									color: '#08fdd8'
+								}
+							}}
+						>
+							<AccountCircleOutlinedIcon sx={{ fontSize: 24 }} data-testid="about-icon" />
 						</ListItemIcon>
-						<ListItemText primary={text} />
+						<ListItemText primary={DrawerListItemNames.ABOUT_PAGE} />
 					</ListItem>
-				))}
+				</NextLink>
+				<NextLink href="/skills" passHref>
+					<ListItem
+						className={router.pathname === "/skills" ? "active" : ""}
+						button
+						disableRipple
+						aria-label="go to Skills page"
+						data-testid="drawer-skills-button"
+						sx={{
+							'&:hover': {
+								backgroundColor: 'transparent',
+								color: '#08fdd8'
+							},
+							'&.active': {
+								backgroundColor: 'transparent',
+								color: '#08fdd8'
+							},
+							marginBottom: 1,
+						}}
+					>
+						<ListItemIcon
+							className={router.pathname === "/skills" ? "active" : ""}
+							sx={{
+								'&:hover': {
+									backgroundColor: 'transparent',
+									color: '#08fdd8'
+								},
+								'&.active': {
+									backgroundColor: 'transparent',
+									color: '#08fdd8'
+								}
+							}}
+						>
+							<SettingsOutlinedIcon sx={{ fontSize: 24 }} data-testid="skills-icon" />
+						</ListItemIcon>
+						<ListItemText primary={DrawerListItemNames.SKILLS_PAGE} />
+					</ListItem>
+				</NextLink>
+				<NextLink href="/contact" passHref>
+					<ListItem
+						className={router.pathname === "/contact" ? "active" : ""}
+						button
+						disableRipple
+						aria-label="go to Contact page"
+						data-testid="drawer-contact-button"
+						sx={{
+							'&:hover': {
+								backgroundColor: 'transparent',
+								color: '#08fdd8'
+							},
+							'&.active': {
+								backgroundColor: 'transparent',
+								color: '#08fdd8'
+							},
+							marginBottom: 1,
+						}}
+					>
+						<ListItemIcon
+							className={router.pathname === "/contact" ? "active" : ""}
+							sx={{
+								'&:hover': {
+									backgroundColor: 'transparent',
+									color: '#08fdd8'
+								},
+								'&.active': {
+									backgroundColor: 'transparent',
+									color: '#08fdd8'
+								}
+							}}
+						>
+							<EmailOutlinedIcon sx={{ fontSize: 24 }} data-testid="contact-icon" />
+						</ListItemIcon>
+						<ListItemText primary={DrawerListItemNames.CONTACT_PAGE} />
+					</ListItem>
+				</NextLink>
 			</List>
 		</Box>
 	);
 
   return (
-    <RootBox data-testid="app-bar-root-box">
-      <CustomizedAppBar position="static">
-        <CustomizedToolbar>
+		<RootBox data-testid="app-bar-root-box">
+			<CustomizedAppBar position="static">
+				<CustomizedToolbar>
 					<NextLink href="/" passHref>
 						<CustomizedAvatarBox>
 							<CustomizedAvatar
@@ -182,12 +314,12 @@ export default function WagonAppBar() {
 										objectFit: 'fill',
 									}
 								}}
-                data-testid="deer-image"
-							/>
+								data-testid="deer-image"
+								/>
 						</CustomizedAvatarBox>
 					</NextLink>
-          <Box sx={{ flexGrow: 1 }} />
-          <Stack direction="row" spacing={4} sx={{ display: { xs: 'none', sm: 'flex' } }}>
+					<Box sx={{ flexGrow: 1 }} />
+					<Stack direction="row" spacing={4} sx={{ display: { xs: 'none', sm: 'flex' } }}>
 						<NextLink href="/" passHref>
 							<CustomizedIconButton
 								className={router.pathname === "/" ? "active" : ""}
@@ -228,9 +360,9 @@ export default function WagonAppBar() {
 								<EmailOutlinedIcon sx={{ fontSize: 24 }} data-testid="contact-icon" />
 							</CustomizedIconButton>
 						</NextLink>
-          </Stack>
-          <Box sx={{ flexGrow: 0.5 }} />
-          <Stack direction="row" spacing={2} sx={{ display: { xs: 'none', sm: 'flex' } }}>
+					</Stack>
+					<Box sx={{ flexGrow: 0.5 }} />
+					<Stack direction="row" spacing={2} sx={{ display: { xs: 'none', sm: 'flex' } }}>
 						<CustomizedMuiLink
 							href={SocialLinks.TWITTER}
 							target="_blank"
@@ -267,8 +399,8 @@ export default function WagonAppBar() {
 						>
 							<CustomizedFontAwesomeIcon icon={faSoundcloud} data-testid="soundcloud-icon" />
 						</CustomizedMuiLink>
-          </Stack>
-          <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
+					</Stack>
+					<Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
 						<IconButton
 							disableRipple
 							edge="end"
@@ -280,20 +412,26 @@ export default function WagonAppBar() {
 							<MenuIcon sx={{ fontSize: 35 }} data-testid="menu-icon" />
 						</IconButton>
 					</Box>
-        </CustomizedToolbar>
-      </CustomizedAppBar>
+				</CustomizedToolbar>
+			</CustomizedAppBar>
 			<React.Fragment key={"right"}>
 				<Drawer
 					anchor={"right"}
 					open={state["right"]}
 					onClose={toggleDrawer("right", false)}
 					sx={{
-						width: DRAWER_WIDTH,
+						'& .MuiDrawer-paper': {
+							boxSizing: 'border-box',
+							width: DRAWER_WIDTH,
+							backgroundColor: '#181818',
+							backgroundImage: 'none',
+							borderLeft: '1px solid hsla(0,0%,100%,.12)',
+						},
 					}}
 				>
 					{list("right")}
 				</Drawer>
 			</React.Fragment>
-    </RootBox>
+		</RootBox>
   );
 }
