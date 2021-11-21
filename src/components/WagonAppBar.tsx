@@ -408,6 +408,7 @@ export default function WagonAppBar() {
 							aria-label="open drawer"
 							sx={{ color: "#08fdd8" }}
 							onClick={toggleDrawer("right", true)}
+							data-testid="menu-button"
 						>
 							<MenuIcon sx={{ fontSize: 35 }} data-testid="menu-icon" />
 						</IconButton>
