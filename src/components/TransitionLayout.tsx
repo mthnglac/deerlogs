@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Container from '@mui/material/Container';
 import WagonSideBar from './WagonSideBar';
 import WagonAppBar from './WagonAppBar';
 
@@ -8,13 +9,11 @@ interface LayoutProps {
 
 export default function TransitionLayout({ children }: LayoutProps) {
   return (
-    <div>
+    <Container disableGutters>
 			<WagonSideBar />
 			<WagonAppBar />
-      <div>
-        {children}
-      </div>
-    </div>
+			{children}
+    </Container>
   );
 }
 
