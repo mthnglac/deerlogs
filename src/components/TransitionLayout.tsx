@@ -5,6 +5,10 @@ import WagonAppBar from './WagonAppBar';
 import { styled } from '@mui/material/styles';
 
 const CustomizedContainer = styled(Container)<ContainerProps>(({ theme }) => ({
+	display: 'flex',
+	flexDirection: 'column',
+	height: '100vh',
+
 	[theme.breakpoints.up('lg')]: {
 		maxWidth: 'unset',
 	},
@@ -17,9 +21,9 @@ interface LayoutProps {
 export default function TransitionLayout({ children }: LayoutProps) {
   return (
 		<>
-			<WagonSideBar />
-			<WagonAppBar />
 			<CustomizedContainer disableGutters>
+				<WagonSideBar />
+				<WagonAppBar />
 				{children}
 			</CustomizedContainer>
 		</>

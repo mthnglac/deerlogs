@@ -1,21 +1,65 @@
 import * as React from 'react';
 import NextLink from 'next/link'
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import Box, { BoxProps } from '@mui/material/Box';
+import Grid, { GridProps } from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import ProTip from '../src/ProTip';
-import Copyright from '../src/Copyright';
+import Avatar, { AvatarProps } from '@mui/material/Avatar';
+import { styled } from '@mui/material/styles';
 
-// Update the Button's color prop options
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
     cyan: true;
   }
 }
-const metok = "<h1>"
-const metok2 = "</h1>"
-//<Stack direction="row" sx={{ m: 0, p: 0, height: '100vh' }}>
+const LOGO_PATH: string = "/images/logo_main.png";
+const CustomizedLeftSideGrid = styled(Grid)<GridProps>(({ theme }) => ({
+	display: 'flex',
+	flexDirection: 'column',
+	alignItems: 'flex-start',
+	justifyContent: 'space-between',
+	zIndex: 1,
+
+	[theme.breakpoints.only('xs')]: {
+		marginLeft: '10px',
+		marginRight: '10px',
+	},
+}));
+const CustomizedRightSideGrid = styled(Grid)<GridProps>(({ theme }) => ({
+	display: 'flex',
+	flexDirection: 'column',
+	alignItems: 'center',
+	justifyContent: 'center',
+	zIndex: 0,
+
+	[theme.breakpoints.only('xs')]: {
+		position: 'absolute',
+		left: 'auto',
+		height: '90%',
+		opacity: '.15',
+	},
+}));
+const CustomizedResponsiveMarginedBox = styled(Box)<BoxProps>(({ theme }) => ({
+	marginLeft: '120px',
+
+	[theme.breakpoints.only('xs')]: {
+		marginLeft: '50px',
+	},
+}));
+const CustomizedAvatarBox = styled(Box)<BoxProps>({
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	position: 'relative',
+	backgroundColor: 'transparent',
+});
+const CustomizedAvatar = styled(Avatar)<AvatarProps>({
+	width: '100%',
+	maxWidth: 500,
+	height: 'unset',
+	borderRadius: 0,
+});
+
 export default function Index() {
   return (
 		<Grid
@@ -24,18 +68,18 @@ export default function Index() {
 			justifyContent="space-around"
 			alignItems="stretch"
 			sx={{
-				height: '100vh',
+				height: '100%',
 			}}
 			columns={12}
 		>
-			<Grid
+			<CustomizedLeftSideGrid
 				item
 				xs={12}
-				sm={5}
+				sm={6}
 				md={5}
 				lg={5}
 				xl={5}
-				my={5}
+				my={3}
 				sx={{
 					display: 'flex',
 					flexDirection: 'column',
@@ -51,7 +95,6 @@ export default function Index() {
 						mb={0}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
-							fontSize: 20,
 							fontStyle: 'italic',
 							color: '#515152',
 						}}
@@ -66,7 +109,6 @@ export default function Index() {
 						ml={3}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
-							fontSize: 20,
 							fontStyle: 'italic',
 							color: '#515152',
 						}}
@@ -74,10 +116,10 @@ export default function Index() {
 						&lt;body&gt;
 					</Typography>
 				</Box>
-				<Box ml={15}>
+				<CustomizedResponsiveMarginedBox>
 					<Typography
-						variant="h3"
-						component="h1"
+						variant="inherit"
+						component="p"
 						gutterBottom
 						mb={0}
 						sx={{
@@ -87,17 +129,14 @@ export default function Index() {
 							fontStyle: 'italic',
 						}}
 					>
-						{metok}
+						&lt;h1&gt;
 					</Typography>
 					<Typography
 						variant="h3"
 						component="h1"
 						gutterBottom
 						mb={0}
-						sx={{
-							fontSize: 56,
-							fontWeight: 700,
-						}}
+						sx={{ fontWeight: 700 }}
 					>
 						Hi,
 					</Typography>
@@ -106,22 +145,22 @@ export default function Index() {
 						component="h1"
 						gutterBottom
 						mb={0}
-						sx={{ fontSize: 56, fontWeight: 700 }}
+						sx={{ fontWeight: 700 }}
 					>
-						I'm Metehan,
+						{`I'm Metehan,`}
 					</Typography>
 					<Typography
 						variant="h3"
 						component="h1"
 						gutterBottom
 						mb={0}
-						sx={{ fontSize: 56, fontWeight: 700 }}
+						sx={{ fontWeight: 700 }}
 					>
 						Web Developer
 					</Typography>
 					<Typography
-						variant="h3"
-						component="h1"
+						variant="inherit"
+						component="p"
 						gutterBottom
 						mt={0}
 						mb={0}
@@ -132,7 +171,7 @@ export default function Index() {
 							fontStyle: 'italic',
 						}}
 					>
-						{metok2}
+						&lt;/h1&gt;
 					</Typography>
 					<Typography
 						variant="caption"
@@ -162,7 +201,7 @@ export default function Index() {
 							Contact Me
 						</Button>
 					</NextLink>
-				</Box>
+				</CustomizedResponsiveMarginedBox>
 				<Box>
 					<Typography
 						variant="inherit"
@@ -172,7 +211,6 @@ export default function Index() {
 						ml={3}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
-							fontSize: 20,
 							fontStyle: 'italic',
 							color: '#515152',
 						}}
@@ -186,7 +224,6 @@ export default function Index() {
 						mb={0}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
-							fontSize: 20,
 							fontStyle: 'italic',
 							color: '#515152',
 						}}
@@ -194,25 +231,29 @@ export default function Index() {
 						&lt;/html&gt;
 					</Typography>
 				</Box>
-			</Grid>
-			<Grid
+			</CustomizedLeftSideGrid>
+			<CustomizedRightSideGrid
 				item
 				xs={12}
-				sm={5}
+				sm={6}
 				md={5}
 				lg={5}
 				xl={5}
 				my={5}
 			>
-				<Typography variant="h4" component="h1" gutterBottom>
-				Next.js v5-beta with TypeScript example
-				</Typography>
-				<NextLink href="/about">
-				Go to the about page
-				</NextLink>
-				<ProTip />
-				<Copyright />
-			</Grid>
+				<CustomizedAvatarBox>
+					<CustomizedAvatar
+						alt="logo"
+						src={LOGO_PATH}
+						imgProps={{
+							style: {
+								objectFit: 'fill',
+							}
+						}}
+						data-testid="index-content-deer-image"
+						/>
+				</CustomizedAvatarBox>
+			</CustomizedRightSideGrid>
 		</Grid>
   );
 }
