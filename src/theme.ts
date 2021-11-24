@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 declare module '@mui/material/styles' {
@@ -25,7 +25,7 @@ declare module '@mui/material/styles' {
 }
 
 // Create a theme instance.
-const theme = createTheme({
+let theme = createTheme({
   palette: {
 		mode: 'dark',
     primary: {
@@ -45,5 +45,6 @@ const theme = createTheme({
 		},
   },
 });
+theme = responsiveFontSizes(theme)
 
 export default theme;
