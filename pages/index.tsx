@@ -13,6 +13,18 @@ declare module '@mui/material/Button' {
   }
 }
 const LOGO_PATH: string = "/images/logo_main.png";
+
+const CustomizedRootGrid = styled(Grid)<GridProps>(({ theme }) => ({
+	alignItems: 'stretch',
+	height: '100%',
+
+	[theme.breakpoints.down('lg')]: {
+		justifyContent: 'space-evenly',
+	},
+	[theme.breakpoints.up('lg')]: {
+		justifyContent: 'space-around',
+	},
+}));
 const CustomizedLeftSideGrid = styled(Grid)<GridProps>(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
@@ -32,7 +44,7 @@ const CustomizedRightSideGrid = styled(Grid)<GridProps>(({ theme }) => ({
 	justifyContent: 'center',
 	zIndex: 0,
 
-	[theme.breakpoints.only('xs')]: {
+	[theme.breakpoints.down('md')]: {
 		position: 'absolute',
 		left: 'auto',
 		height: '90%',
@@ -40,9 +52,14 @@ const CustomizedRightSideGrid = styled(Grid)<GridProps>(({ theme }) => ({
 	},
 }));
 const CustomizedResponsiveMarginedBox = styled(Box)<BoxProps>(({ theme }) => ({
+	paddingLeft: '10px',
+	paddingRight: '10px',
 	marginLeft: '120px',
 
 	[theme.breakpoints.only('xs')]: {
+		marginLeft: '50px',
+	},
+	[theme.breakpoints.only('sm')]: {
 		marginLeft: '50px',
 	},
 }));
@@ -62,30 +79,19 @@ const CustomizedAvatar = styled(Avatar)<AvatarProps>({
 
 export default function Index() {
   return (
-		<Grid
+		<CustomizedRootGrid
 			container
 			direction="row"
-			justifyContent="space-around"
-			alignItems="stretch"
-			sx={{
-				height: '100%',
-			}}
 			columns={12}
 		>
 			<CustomizedLeftSideGrid
 				item
 				xs={12}
-				sm={6}
+				sm={12}
 				md={5}
 				lg={5}
 				xl={5}
 				my={3}
-				sx={{
-					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'flex-start',
-					justifyContent: 'space-between',
-				}}
 			>
 				<Box>
 					<Typography
@@ -93,6 +99,7 @@ export default function Index() {
 						component="p"
 						gutterBottom
 						mb={0}
+						ml={2}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
@@ -106,7 +113,7 @@ export default function Index() {
 						component="p"
 						gutterBottom
 						mb={0}
-						ml={3}
+						ml={4}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
@@ -132,7 +139,7 @@ export default function Index() {
 						&lt;h1&gt;
 					</Typography>
 					<Typography
-						variant="h3"
+						variant="h2"
 						component="h1"
 						gutterBottom
 						mb={0}
@@ -141,7 +148,7 @@ export default function Index() {
 						Hi,
 					</Typography>
 					<Typography
-						variant="h3"
+						variant="h2"
 						component="h1"
 						gutterBottom
 						mb={0}
@@ -150,7 +157,7 @@ export default function Index() {
 						{`I'm Metehan,`}
 					</Typography>
 					<Typography
-						variant="h3"
+						variant="h2"
 						component="h1"
 						gutterBottom
 						mb={0}
@@ -236,7 +243,7 @@ export default function Index() {
 						component="p"
 						gutterBottom
 						mb={0}
-						ml={3}
+						ml={4}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
@@ -250,6 +257,7 @@ export default function Index() {
 						component="p"
 						gutterBottom
 						mb={0}
+						ml={2}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
@@ -263,7 +271,7 @@ export default function Index() {
 			<CustomizedRightSideGrid
 				item
 				xs={12}
-				sm={6}
+				sm={12}
 				md={5}
 				lg={5}
 				xl={5}
@@ -282,6 +290,6 @@ export default function Index() {
 						/>
 				</CustomizedAvatarBox>
 			</CustomizedRightSideGrid>
-		</Grid>
+		</CustomizedRootGrid>
   );
 }

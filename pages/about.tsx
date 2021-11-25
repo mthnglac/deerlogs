@@ -6,6 +6,17 @@ import { styled } from '@mui/material/styles';
 import theme from '../src/theme';
 import WagonDartVader from '../src/components/WagonDartVader'
 
+const CustomizedRootGrid = styled(Grid)<GridProps>(({ theme }) => ({
+	alignItems: 'stretch',
+	height: '100%',
+
+	[theme.breakpoints.down('lg')]: {
+		justifyContent: 'space-evenly',
+	},
+	[theme.breakpoints.up('lg')]: {
+		justifyContent: 'space-around',
+	},
+}));
 const CustomizedLeftSideGrid = styled(Grid)<GridProps>(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
@@ -23,9 +34,10 @@ const CustomizedRightSideGrid = styled(Grid)<GridProps>(({ theme }) => ({
 	flexDirection: 'column',
 	alignItems: 'center',
 	justifyContent: 'center',
+	position: 'relative',
 	zIndex: 0,
 
-	[theme.breakpoints.only('xs')]: {
+	[theme.breakpoints.down('md')]: {
 		position: 'absolute',
 		left: 'auto',
 		height: '90%',
@@ -33,23 +45,23 @@ const CustomizedRightSideGrid = styled(Grid)<GridProps>(({ theme }) => ({
 	},
 }));
 const CustomizedResponsiveMarginedBox = styled(Box)<BoxProps>(({ theme }) => ({
+	paddingLeft: '10px',
+	paddingRight: '10px',
 	marginLeft: '120px',
 
 	[theme.breakpoints.only('xs')]: {
+		marginLeft: '50px',
+	},
+	[theme.breakpoints.only('sm')]: {
 		marginLeft: '50px',
 	},
 }));
 
 export default function About() {
   return (
-		<Grid
+		<CustomizedRootGrid
 			container
 			direction="row"
-			justifyContent="space-around"
-			alignItems="stretch"
-			sx={{
-				height: '100%',
-			}}
 			columns={12}
 		>
 			<CustomizedLeftSideGrid
@@ -60,12 +72,6 @@ export default function About() {
 				lg={5}
 				xl={5}
 				my={3}
-				sx={{
-					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'flex-start',
-					justifyContent: 'space-between',
-				}}
 			>
 				<Box>
 					<Typography
@@ -73,6 +79,7 @@ export default function About() {
 						component="p"
 						gutterBottom
 						mb={0}
+						ml={2}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
@@ -86,7 +93,7 @@ export default function About() {
 						component="p"
 						gutterBottom
 						mb={0}
-						ml={3}
+						ml={4}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
@@ -112,7 +119,7 @@ export default function About() {
 						&lt;h1&gt;
 					</Typography>
 					<Typography
-						variant="h3"
+						variant="h2"
 						component="h1"
 						gutterBottom
 						mb={0}
@@ -202,7 +209,7 @@ export default function About() {
 						component="p"
 						gutterBottom
 						mb={0}
-						ml={3}
+						ml={4}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
@@ -216,6 +223,7 @@ export default function About() {
 						component="p"
 						gutterBottom
 						mb={0}
+						ml={2}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
@@ -234,10 +242,9 @@ export default function About() {
 				lg={5}
 				xl={5}
 				my={5}
-				sx={{ position: 'relative' }}
 			>
 				<WagonDartVader />
 			</CustomizedRightSideGrid>
-		</Grid>
+		</CustomizedRootGrid>
   );
 }
