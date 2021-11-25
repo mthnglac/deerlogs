@@ -87,7 +87,7 @@ const CustomizedIconButton = styled(IconButton)<IconButtonProps>({
 const CustomizedFontAwesomeIcon = styled(FontAwesomeIcon)<FontAwesomeIconProps>({
 	width: '1em !important',
 	height: '1em',
-	fontSize: 13,
+	fontSize: 15,
 });
 const CustomizedMuiLink = styled(MuiLink)<MuiLinkProps>({
 	display: 'inline-flex',
@@ -370,7 +370,7 @@ export default function WagonAppBar() {
 							aria-label="go to my Twitter page"
 							data-testid="twitter-button"
 						>
-							<TwitterIcon sx={{ fontSize: 13 }} data-testid="twitter-icon" />
+							<TwitterIcon sx={{ fontSize: 15 }} data-testid="twitter-icon" />
 						</CustomizedMuiLink>
 						<CustomizedMuiLink
 							href={SocialLinks.GITHUB}
@@ -379,7 +379,7 @@ export default function WagonAppBar() {
 							aria-label="go to my Github page"
 							data-testid="github-button"
 						>
-							<GitHubIcon sx={{ fontSize: 13 }} data-testid="github-icon" />
+							<GitHubIcon sx={{ fontSize: 15 }} data-testid="github-icon" />
 						</CustomizedMuiLink>
 						<CustomizedMuiLink
 							href={SocialLinks.LINKEDIN}
@@ -388,7 +388,7 @@ export default function WagonAppBar() {
 							aria-label="go to my LinkedIn page"
 							data-testid="linkedin-button"
 						>
-							<LinkedInIcon sx={{ fontSize: 13 }} data-testid="linkedin-icon" />
+							<LinkedInIcon sx={{ fontSize: 15 }} data-testid="linkedin-icon" />
 						</CustomizedMuiLink>
 						<CustomizedMuiLink
 							href={SocialLinks.SOUNDCLOUD}

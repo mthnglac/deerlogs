@@ -60,7 +60,7 @@ const CustomizedAvatar = styled(Avatar)<AvatarProps>({
 });
 const CustomizedListItem = styled(ListItem)<ListItemProps>({
 	justifyContent: 'center',
-	margin: '10px 0',
+	margin: '12px 0',
 });
 const CustomizedIconButton = styled(IconButton)<IconButtonProps>({
 	justifyContent: 'center',
@@ -77,7 +77,7 @@ const CustomizedIconButton = styled(IconButton)<IconButtonProps>({
 const CustomizedFontAwesomeIcon = styled(FontAwesomeIcon)<FontAwesomeIconProps>({
 	width: '1em !important',
 	height: '1em',
-	fontSize: 13,
+	fontSize: 17,
 });
 const CustomizedMuiLink = styled(MuiLink)<MuiLinkProps>({
 	display: 'inline-flex',
@@ -156,7 +156,7 @@ export default function PermanentDrawerLeft() {
 									aria-label="go to Home page"
 									data-testid="home-button"
 								>
-									<HomeOutlinedIcon sx={{ fontSize: 24 }} data-testid="home-icon" />
+									<HomeOutlinedIcon sx={{ fontSize: 27 }} data-testid="home-icon" />
 								</CustomizedIconButton>
 							</NextLink>
 						</CustomizedListItem>
@@ -168,7 +168,7 @@ export default function PermanentDrawerLeft() {
 									aria-label="go to About page"
 									data-testid="about-button"
 								>
-									<AccountCircleOutlinedIcon sx={{ fontSize: 24 }} data-testid="about-icon" />
+									<AccountCircleOutlinedIcon sx={{ fontSize: 27 }} data-testid="about-icon" />
 								</CustomizedIconButton>
 							</NextLink>
 						</CustomizedListItem>
@@ -180,7 +180,7 @@ export default function PermanentDrawerLeft() {
 									aria-label="go to Skills page"
 									data-testid="skills-button"
 								>
-									<SettingsOutlinedIcon sx={{ fontSize: 24 }} data-testid="skills-icon" />
+									<SettingsOutlinedIcon sx={{ fontSize: 27 }} data-testid="skills-icon" />
 								</CustomizedIconButton>
 							</NextLink>
 						</CustomizedListItem>
@@ -192,7 +192,7 @@ export default function PermanentDrawerLeft() {
 									aria-label="go to Contact page"
 									data-testid="contact-button"
 								>
-									<EmailOutlinedIcon sx={{ fontSize: 24 }} data-testid="contact-icon" />
+									<EmailOutlinedIcon sx={{ fontSize: 27 }} data-testid="contact-icon" />
 								</CustomizedIconButton>
 							</NextLink>
 						</CustomizedListItem>
@@ -206,7 +206,7 @@ export default function PermanentDrawerLeft() {
 								aria-label="go to my Twitter page"
 								data-testid="twitter-button"
 							>
-								<TwitterIcon sx={{ fontSize: 13 }} data-testid="twitter-icon" />
+								<TwitterIcon sx={{ fontSize: 17 }} data-testid="twitter-icon" />
 							</CustomizedMuiLink>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
@@ -217,7 +217,7 @@ export default function PermanentDrawerLeft() {
 								aria-label="go to my Github page"
 								data-testid="github-button"
 							>
-								<GitHubIcon sx={{ fontSize: 13 }} data-testid="github-icon" />
+								<GitHubIcon sx={{ fontSize: 17 }} data-testid="github-icon" />
 							</CustomizedMuiLink>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
@@ -228,7 +228,7 @@ export default function PermanentDrawerLeft() {
 								aria-label="go to my LinkedIn page"
 								data-testid="linkedin-button"
 							>
-								<LinkedInIcon sx={{ fontSize: 13 }} data-testid="linkedin-icon" />
+								<LinkedInIcon sx={{ fontSize: 17 }} data-testid="linkedin-icon" />
 							</CustomizedMuiLink>
 						</CustomizedListItem>
 						<CustomizedListItem disablePadding>
