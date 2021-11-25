@@ -50,10 +50,10 @@ const CustomizedResponsiveMarginedBox = styled(Box)<BoxProps>(({ theme }) => ({
 	marginLeft: '120px',
 
 	[theme.breakpoints.only('xs')]: {
-		marginLeft: '50px',
+		marginLeft: '30px',
 	},
 	[theme.breakpoints.only('sm')]: {
-		marginLeft: '50px',
+		marginLeft: '30px',
 	},
 }));
 
@@ -84,6 +84,7 @@ export default function About() {
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;html&gt;
@@ -98,6 +99,7 @@ export default function About() {
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;body&gt;
@@ -126,6 +128,7 @@ export default function About() {
 						color={theme.palette.cyan.main}
 						sx={{
 							fontWeight: 700,
+							fontSize: '1.8rem',
 						}}
 					>
 						About Me
@@ -139,8 +142,8 @@ export default function About() {
 						sx={{
 							color: '#515152',
 							fontFamily: "'URW Chancery L', cursive",
-							fontSize: 16,
 							fontStyle: 'italic',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/h1&gt;
@@ -152,10 +155,10 @@ export default function About() {
 						mt={2}
 						mb={0}
 						sx={{
-							display: 'inline-flex',
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;p&gt;
@@ -166,6 +169,9 @@ export default function About() {
 						gutterBottom
 						mt={0}
 						mb={2}
+						sx={{
+							fontSize: '.9rem',
+						}}
 					>
 						Professionally connected with the web development industry and information technology for many years.
 					</Typography>
@@ -175,6 +181,9 @@ export default function About() {
 						gutterBottom
 						mt={0}
 						mb={2}
+						sx={{
+							fontSize: '.9rem',
+						}}
 					>
 						Well-organised person, problem solver, independent employee with high attention to detail. Fan of outdoor activities, TV series and recently English literature. Therefore remote employment is preferred.
 					</Typography>
@@ -184,6 +193,9 @@ export default function About() {
 						gutterBottom
 						mt={0}
 						mb={0}
+						sx={{
+							fontSize: '.9rem',
+						}}
 					>
 						Interested in the entire frontend spectrum and working on ambitious projects with positive people.
 					</Typography>
@@ -194,10 +206,10 @@ export default function About() {
 						mt={0}
 						mb={2}
 						sx={{
-							display: 'inline-flex',
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/p&gt;
@@ -214,6 +226,7 @@ export default function About() {
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/body&gt;
@@ -228,6 +241,7 @@ export default function About() {
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/html&gt;

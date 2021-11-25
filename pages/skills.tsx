@@ -1,9 +1,23 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
+import Stack, { StackProps } from '@mui/material/Stack';
 import Box, { BoxProps } from '@mui/material/Box';
 import Grid, { GridProps } from '@mui/material/Grid';
+import Avatar, { AvatarProps } from '@mui/material/Avatar';
+import Link from '../src/Link';
+import WagonSkills from '../src/components/WagonSkills'
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import { faPython, faJsSquare, faReact, faVuejs } from '@fortawesome/free-brands-svg-icons';
 import { styled } from '@mui/material/styles';
 import theme from '../src/theme';
+
+const LOGO_PATH: string = "/images/logo_main.png";
+enum SocialLinks {
+	TWITTER = "https://twitter.com/metehanglc",
+	GITHUB = "https://github.com/mthnglac",
+	LINKEDIN = "https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/",
+	SOUNDCLOUD = "https://soundcloud.com/metehan-g-la",
+};
 
 const CustomizedRootGrid = styled(Grid)<GridProps>(({ theme }) => ({
 	alignItems: 'stretch',
@@ -35,20 +49,40 @@ const CustomizedRightSideGrid = styled(Grid)<GridProps>(({ theme }) => ({
 	justifyContent: 'center',
 	zIndex: 0,
 
-	[theme.breakpoints.only('xs')]: {
-		position: 'absolute',
-		left: 'auto',
-		height: '90%',
-		opacity: '.15',
+	[theme.breakpoints.down('md')]: {
+		display: 'none',
 	},
 }));
 const CustomizedResponsiveMarginedBox = styled(Box)<BoxProps>(({ theme }) => ({
+	paddingLeft: '10px',
+	paddingRight: '10px',
 	marginLeft: '120px',
 
 	[theme.breakpoints.only('xs')]: {
-		marginLeft: '50px',
+		marginLeft: '30px',
+	},
+	[theme.breakpoints.only('sm')]: {
+		marginLeft: '30px',
 	},
 }));
+const CustomizedAvatarBox = styled(Box)<BoxProps>({
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+});
+const CustomizedAvatar = styled(Avatar)<AvatarProps>({
+	width: '100%',
+	maxWidth: 500,
+	height: 'unset',
+	borderRadius: 0,
+});
+const CustomizedSkillsIconStack = styled(Stack)<StackProps>({
+	marginBottom: '20px',
+})
+const CustomizedFontAwesomeIcon = styled(FontAwesomeIcon)<FontAwesomeIconProps>({
+	marginRight: '2rem',
+	fontSize: 45,
+});
 
 export default function Skills() {
   return (
@@ -72,10 +106,12 @@ export default function Skills() {
 						component="p"
 						gutterBottom
 						mb={0}
+						ml={2}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;html&gt;
@@ -85,11 +121,12 @@ export default function Skills() {
 						component="p"
 						gutterBottom
 						mb={0}
-						ml={3}
+						ml={4}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;body&gt;
@@ -104,7 +141,7 @@ export default function Skills() {
 						sx={{
 							color: '#515152',
 							fontFamily: "'URW Chancery L', cursive",
-							fontSize: 16,
+							fontSize: '.9rem',
 							fontStyle: 'italic',
 						}}
 					>
@@ -118,6 +155,7 @@ export default function Skills() {
 						color={theme.palette.cyan.main}
 						sx={{
 							fontWeight: 700,
+							fontSize: '1.8rem',
 						}}
 					>
 						Skills & Experience
@@ -131,7 +169,7 @@ export default function Skills() {
 						sx={{
 							color: '#515152',
 							fontFamily: "'URW Chancery L', cursive",
-							fontSize: 16,
+							fontSize: '.9rem',
 							fontStyle: 'italic',
 						}}
 					>
@@ -144,9 +182,9 @@ export default function Skills() {
 						mt={2}
 						mb={0}
 						sx={{
-							display: 'inline-flex',
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
+							fontSize: '.9rem',
 							color: '#515152',
 						}}
 					>
@@ -158,6 +196,9 @@ export default function Skills() {
 						gutterBottom
 						mt={0}
 						mb={2}
+						sx={{
+							fontSize: '.9rem',
+						}}
 					>
 						The main area of my expertise is frontend development (client side).
 					</Typography>
@@ -167,8 +208,11 @@ export default function Skills() {
 						gutterBottom
 						mt={0}
 						mb={2}
+						sx={{
+							fontSize: '.90rem',
+						}}
 					>
-						HTML, CSS, Javascript, building small and medium web apps with React,
+						HTML, CSS, Javascript, building small and medium web apps with React,	ReactNative, Vue, Nuxt, custom plugins, features, animations and coding interactive layouts.
 					</Typography>
 					<Typography
 						variant="inherit"
@@ -176,23 +220,20 @@ export default function Skills() {
 						gutterBottom
 						mt={0}
 						mb={2}
+						sx={{
+							fontSize: '.9rem',
+						}}
 					>
+					</Typography>
 					<Typography
 						variant="inherit"
 						component="p"
 						gutterBottom
 						mt={0}
 						mb={2}
-					>
-						ReactNative, Vue, Nuxt, custom plugins, features, animations and coding interactive layouts.
-					</Typography>
-					</Typography>
-					<Typography
-						variant="inherit"
-						component="p"
-						gutterBottom
-						mt={0}
-						mb={0}
+						sx={{
+							fontSize: '.9rem',
+						}}
 					>
 						I have also advanced-level backend developer experience with Django, DRF, RestAPI.
 					</Typography>
@@ -202,17 +243,58 @@ export default function Skills() {
 						gutterBottom
 						mt={0}
 						mb={0}
+						sx={{
+							fontSize: '.9rem',
+						}}
 					>
-						Visit my [LinkedIn][LinkedIn] profile for more details or just [contact][contact] me.
-					</Typography>
-					<Typography
-						variant="inherit"
-						component="p"
-						gutterBottom
-						mt={0}
-						mb={0}
-					>
-						You can also visit my [GitHub][GitHub] profile and contribute my projects.
+						Visit my
+						<Typography
+							variant="inherit"
+							component={Link}
+							target="_blank"
+							href={SocialLinks.LINKEDIN}
+							gutterBottom
+							mt={0}
+							mb={0}
+							sx={{
+								fontSize: '.9rem',
+								color: theme.palette.cyan.main,
+							}}
+						>
+							&nbsp;LinkedIn&nbsp;
+						</Typography>
+						profile for more details or just
+						<Typography
+							variant="inherit"
+							component={Link}
+							href="/contact"
+							gutterBottom
+							mt={0}
+							mb={0}
+							sx={{
+								fontSize: '.9rem',
+								color: theme.palette.cyan.main,
+							}}
+						>
+							&nbsp;contact&nbsp;
+						</Typography>
+						me. You can also visit my
+						<Typography
+							variant="inherit"
+							component={Link}
+							target="_blank"
+							href={SocialLinks.GITHUB}
+							gutterBottom
+							mt={0}
+							mb={0}
+							sx={{
+								fontSize: '.9rem',
+								color: theme.palette.cyan.main,
+							}}
+						>
+							&nbsp;GitHub&nbsp;
+						</Typography>
+						profile and contribute my projects.
 					</Typography>
 					<Typography
 						variant="inherit"
@@ -221,14 +303,20 @@ export default function Skills() {
 						mt={0}
 						mb={2}
 						sx={{
-							display: 'inline-flex',
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/p&gt;
 					</Typography>
+					<CustomizedSkillsIconStack direction="row">
+						<CustomizedFontAwesomeIcon icon={faPython} data-testid="python-icon" />
+						<CustomizedFontAwesomeIcon icon={faJsSquare} data-testid="javascript-icon" />
+						<CustomizedFontAwesomeIcon icon={faVuejs} data-testid="vuejs-icon" />
+						<CustomizedFontAwesomeIcon icon={faReact} data-testid="react-icon" />
+					</CustomizedSkillsIconStack>
 				</CustomizedResponsiveMarginedBox>
 				<Box>
 					<Typography
@@ -236,11 +324,12 @@ export default function Skills() {
 						component="p"
 						gutterBottom
 						mb={0}
-						ml={3}
+						ml={4}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/body&gt;
@@ -250,10 +339,12 @@ export default function Skills() {
 						component="p"
 						gutterBottom
 						mb={0}
+						ml={2}
 						sx={{
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/html&gt;
@@ -269,35 +360,9 @@ export default function Skills() {
 				xl={5}
 				my={5}
 			>
-				<Box>
-					<Typography
-						variant="inherit"
-						component="p"
-						gutterBottom
-						mb={0}
-						ml={3}
-						sx={{
-							fontFamily: "'URW Chancery L', cursive",
-							fontStyle: 'italic',
-							color: '#515152',
-						}}
-					>
-						&lt;/body&gt;
-					</Typography>
-					<Typography
-						variant="inherit"
-						component="p"
-						gutterBottom
-						mb={0}
-						sx={{
-							fontFamily: "'URW Chancery L', cursive",
-							fontStyle: 'italic',
-							color: '#515152',
-						}}
-					>
-						&lt;/html&gt;
-					</Typography>
-				</Box>
+				<CustomizedAvatarBox>
+					<WagonSkills />
+				</CustomizedAvatarBox>
 			</CustomizedRightSideGrid>
 		</CustomizedRootGrid>
   );

@@ -6,6 +6,7 @@ import Grid, { GridProps } from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Avatar, { AvatarProps } from '@mui/material/Avatar';
 import { styled } from '@mui/material/styles';
+import theme from '../src/theme';
 
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
@@ -57,10 +58,10 @@ const CustomizedResponsiveMarginedBox = styled(Box)<BoxProps>(({ theme }) => ({
 	marginLeft: '120px',
 
 	[theme.breakpoints.only('xs')]: {
-		marginLeft: '50px',
+		marginLeft: '30px',
 	},
 	[theme.breakpoints.only('sm')]: {
-		marginLeft: '50px',
+		marginLeft: '30px',
 	},
 }));
 const CustomizedAvatarBox = styled(Box)<BoxProps>({
@@ -104,6 +105,7 @@ export default function Index() {
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;html&gt;
@@ -118,6 +120,7 @@ export default function Index() {
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;body&gt;
@@ -132,7 +135,7 @@ export default function Index() {
 						sx={{
 							color: '#515152',
 							fontFamily: "'URW Chancery L', cursive",
-							fontSize: 16,
+							fontSize: '.9rem',
 							fontStyle: 'italic',
 						}}
 					>
@@ -174,8 +177,8 @@ export default function Index() {
 						sx={{
 							color: '#515152',
 							fontFamily: "'URW Chancery L', cursive",
-							fontSize: 16,
 							fontStyle: 'italic',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/h1&gt;
@@ -185,14 +188,20 @@ export default function Index() {
 						component="p"
 						gutterBottom
 						mb={0}
+						mt={2}
 						sx={{
 							display: 'inline-flex',
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
+
+							[theme.breakpoints.only('xs')]: {
+								display: 'flex',
+							},
 						}}
 					>
-						&lt;p&gt;
+						&lt;p&gt;&nbsp;
 					</Typography>
 					<Typography
 						variant="caption"
@@ -218,6 +227,11 @@ export default function Index() {
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
+
+							[theme.breakpoints.only('xs')]: {
+								display: 'flex',
+							},
 						}}
 					>
 						&lt;/p&gt;
@@ -248,6 +262,7 @@ export default function Index() {
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/body&gt;
@@ -262,6 +277,7 @@ export default function Index() {
 							fontFamily: "'URW Chancery L', cursive",
 							fontStyle: 'italic',
 							color: '#515152',
+							fontSize: '.9rem',
 						}}
 					>
 						&lt;/html&gt;
@@ -287,7 +303,7 @@ export default function Index() {
 							}
 						}}
 						data-testid="index-content-deer-image"
-						/>
+					/>
 				</CustomizedAvatarBox>
 			</CustomizedRightSideGrid>
 		</CustomizedRootGrid>
