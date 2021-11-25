@@ -174,6 +174,20 @@ export default function Index() {
 						&lt;/h1&gt;
 					</Typography>
 					<Typography
+						variant="inherit"
+						component="p"
+						gutterBottom
+						mb={0}
+						sx={{
+							display: 'inline-flex',
+							fontFamily: "'URW Chancery L', cursive",
+							fontStyle: 'italic',
+							color: '#515152',
+						}}
+					>
+						&lt;p&gt;
+					</Typography>
+					<Typography
 						variant="caption"
 						gutterBottom
 						mt={0}
@@ -186,6 +200,20 @@ export default function Index() {
 						}}
 					>
 						Full Stack Developer / Freelancer
+					</Typography>
+					<Typography
+						variant="inherit"
+						component="p"
+						gutterBottom
+						mb={0}
+						sx={{
+							display: 'inline-flex',
+							fontFamily: "'URW Chancery L', cursive",
+							fontStyle: 'italic',
+							color: '#515152',
+						}}
+					>
+						&lt;/p&gt;
 					</Typography>
 					<NextLink href="/contact" passHref>
 						<Button
