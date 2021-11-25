@@ -7,7 +7,7 @@ const Skills = styled('div')({
 	alignSelf: 'center',
 })
 const Container = styled('div')({
-	margin: '1em 0',
+	margin: '.5em 0',
 	positon: 'relative',
 	width: '22.5em',
 })
