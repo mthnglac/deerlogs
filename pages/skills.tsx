@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography';
 import Stack, { StackProps } from '@mui/material/Stack';
 import Box, { BoxProps } from '@mui/material/Box';
 import Grid, { GridProps } from '@mui/material/Grid';
-import Avatar, { AvatarProps } from '@mui/material/Avatar';
 import Link from '../src/Link';
 import WagonSkills from '../src/components/WagonSkills'
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
@@ -11,7 +10,6 @@ import { faPython, faJsSquare, faReact, faVuejs } from '@fortawesome/free-brands
 import { styled } from '@mui/material/styles';
 import theme from '../src/theme';
 
-const LOGO_PATH: string = "/images/logo_main.png";
 enum SocialLinks {
 	TWITTER = "https://twitter.com/metehanglc",
 	GITHUB = "https://github.com/mthnglac",
@@ -69,12 +67,6 @@ const CustomizedAvatarBox = styled(Box)<BoxProps>({
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'center',
-});
-const CustomizedAvatar = styled(Avatar)<AvatarProps>({
-	width: '100%',
-	maxWidth: 500,
-	height: 'unset',
-	borderRadius: 0,
 });
 const CustomizedSkillsIconStack = styled(Stack)<StackProps>({
 	marginBottom: '20px',
@@ -212,7 +204,7 @@ export default function Skills() {
 							fontSize: '.90rem',
 						}}
 					>
-						HTML, CSS, Javascript, building small and medium web apps with React,	ReactNative, Vue, Nuxt, custom plugins, features, animations and coding interactive layouts.
+						HTML, CSS, Javascript, building small and medium web apps with ReactJS, ReactNative, NextJS, EmberJS, VueJS, NuxtJS, custom plugins, features, animations and coding interactive layouts.
 					</Typography>
 					<Typography
 						variant="inherit"
