@@ -31,6 +31,6 @@ const config: Config.InitialOptions = {
 		'^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$': '<rootDir>/__mocks__/fileMock.js',
 		'^@/components/(.*)$': '<rootDir>/components/$1',
   },
-	setupFilesAfterEnv: ['<rootDir>/jest.setup.js']
+	setupFilesAfterEnv: ['<rootDir>/jest.setup.ts']
 }
 export default config
