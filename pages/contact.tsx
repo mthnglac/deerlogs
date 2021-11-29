@@ -149,6 +149,7 @@ export default function Contact() {
 							fontWeight: 700,
 							fontSize: '1.8rem',
 						}}
+						data-testid="contact-content-header"
 					>
 						Contact Me
 					</Typography>

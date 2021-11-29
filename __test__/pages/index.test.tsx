@@ -1,15 +1,12 @@
-import * as React from 'react'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render } from '@testing-library/react';
 import Home from '../../pages/index'
 
-describe('Home', () => {
-  it('renders a heading', async () => {
-    render(<Home />)
+describe('Blog page', () => {
+  it('renders blog page', async () => {
+    const { getByTestId } = render(<Home />);
 
-		const heading = await waitFor(() => screen.getByRole('heading', {
-      name: 'Next.js v5-beta with TypeScript example',
-		}))
+    const openingHtmlText =  getByTestId('index-content-opening-html')
 
-    expect(heading).toBeInTheDocument()
-  })
-})
+		expect(openingHtmlText).toBeVisible()
+  });
+});

@@ -107,6 +107,7 @@ export default function Index() {
 							color: '#515152',
 							fontSize: '.9rem',
 						}}
+						data-testid="index-content-opening-html"
 					>
 						&lt;html&gt;
 					</Typography>
@@ -122,6 +123,7 @@ export default function Index() {
 							color: '#515152',
 							fontSize: '.9rem',
 						}}
+						data-testid="index-content-opening-body"
 					>
 						&lt;body&gt;
 					</Typography>
@@ -138,6 +140,7 @@ export default function Index() {
 							fontSize: '.9rem',
 							fontStyle: 'italic',
 						}}
+						data-testid="index-content-opening-header"
 					>
 						&lt;h1&gt;
 					</Typography>
@@ -147,6 +150,7 @@ export default function Index() {
 						gutterBottom
 						mb={0}
 						sx={{ fontWeight: 700 }}
+						data-testid="index-content-header-part-one"
 					>
 						Hi,
 					</Typography>
@@ -156,6 +160,7 @@ export default function Index() {
 						gutterBottom
 						mb={0}
 						sx={{ fontWeight: 700 }}
+						data-testid="index-content-header-part-two"
 					>
 						{`I'm Metehan,`}
 					</Typography>
@@ -165,6 +170,7 @@ export default function Index() {
 						gutterBottom
 						mb={0}
 						sx={{ fontWeight: 700 }}
+						data-testid="index-content-header-part-three"
 					>
 						Web Developer
 					</Typography>
@@ -180,6 +186,7 @@ export default function Index() {
 							fontStyle: 'italic',
 							fontSize: '.9rem',
 						}}
+						data-testid="index-content-closing-header"
 					>
 						&lt;/h1&gt;
 					</Typography>
@@ -200,6 +207,7 @@ export default function Index() {
 								display: 'flex',
 							},
 						}}
+						data-testid="index-content-opening-paragraph"
 					>
 						&lt;p&gt;&nbsp;&nbsp;
 					</Typography>
@@ -214,6 +222,7 @@ export default function Index() {
 							letterSpacing: '.4vw',
 							opacity: .5,
 						}}
+						data-testid="index-content-job-title"
 					>
 						Full Stack Developer / Freelancer
 					</Typography>
@@ -233,6 +242,7 @@ export default function Index() {
 								display: 'flex',
 							},
 						}}
+						data-testid="index-content-closing-paragraph"
 					>
 						&lt;/p&gt;
 					</Typography>
@@ -240,12 +250,12 @@ export default function Index() {
 						<Button
 							variant="outlined"
 							aria-label="go to Contact page"
-							data-testid="index-content-contact-button"
 							color="cyan"
 							sx={{
 								display: 'table',
 								marginTop: '40px',
 							}}
+							data-testid="index-content-contact-button"
 						>
 							Contact Me
 						</Button>
@@ -264,6 +274,7 @@ export default function Index() {
 							color: '#515152',
 							fontSize: '.9rem',
 						}}
+						data-testid="index-content-closing-body"
 					>
 						&lt;/body&gt;
 					</Typography>
@@ -279,6 +290,7 @@ export default function Index() {
 							color: '#515152',
 							fontSize: '.9rem',
 						}}
+						data-testid="index-content-closing-html"
 					>
 						&lt;/html&gt;
 					</Typography>

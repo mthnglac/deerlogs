@@ -18,7 +18,6 @@ const config: Config.InitialOptions = {
 		'^.+\\.module\\.(css|sass|scss)$',
 	],
   transform: {
-    //'^.+\\.(ts|tsx)$': 'babel-jest',
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
   watchPlugins: [
@@ -27,8 +26,8 @@ const config: Config.InitialOptions = {
   ],
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
-		'^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.ts',
+		'^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$': '<rootDir>/__mocks__/fileMock.ts',
 		'^@/components/(.*)$': '<rootDir>/components/$1',
   },
 	setupFilesAfterEnv: ['<rootDir>/jest.setup.ts']
