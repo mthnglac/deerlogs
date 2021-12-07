@@ -1,19 +1,19 @@
-import * as React from 'react';
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import * as React from "react";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { red } from "@mui/material/colors";
 
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface Theme {
     status: {
-      danger: React.CSSProperties['color'];
+      danger: React.CSSProperties["color"];
     };
   }
 
   interface Palette {
-    cyan: Palette['primary'];
+    cyan: Palette["primary"];
   }
   interface PaletteOptions {
-    cyan: PaletteOptions['primary'];
+    cyan: PaletteOptions["primary"];
   }
 
   interface PaletteColor {
@@ -27,24 +27,24 @@ declare module '@mui/material/styles' {
 // Create a theme instance.
 let theme = createTheme({
   palette: {
-		mode: 'dark',
+    mode: "dark",
     primary: {
-      main: '#556cd6',
+      main: "#556cd6",
     },
     secondary: {
-      main: '#19857b',
+      main: "#19857b",
     },
     error: {
       main: red.A400,
     },
-		cyan: {
-			main: '#08fdd8'
-		},
-		background: {
-			default: '#1d1d1d',
-		},
+    cyan: {
+      main: "#08fdd8",
+    },
+    background: {
+      default: "#1d1d1d",
+    },
   },
 });
-theme = responsiveFontSizes(theme)
+theme = responsiveFontSizes(theme);
 
 export default theme;
