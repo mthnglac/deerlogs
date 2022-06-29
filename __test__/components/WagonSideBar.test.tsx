@@ -136,7 +136,7 @@ describe("WagonSideBar component", () => {
     expect(linkedinButton).toBeVisible();
     expect(linkedinButton).toHaveAttribute(
       "href",
-      "https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/"
+      "https://www.linkedin.com/in/metehanglc"
     );
     expect(linkedinIcon).toBeVisible();
   });
