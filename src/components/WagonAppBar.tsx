@@ -31,7 +31,7 @@ import { styled } from "@mui/material/styles";
 enum SocialLinks {
   TWITTER = "https://twitter.com/metehanglc",
   GITHUB = "https://github.com/mthnglac",
-  LINKEDIN = "https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/",
+  LINKEDIN = "https://www.linkedin.com/in/metehanglc",
   SOUNDCLOUD = "https://soundcloud.com/metehan-g-la",
 }
 enum DrawerListItemNames {

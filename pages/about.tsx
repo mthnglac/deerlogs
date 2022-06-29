@@ -189,7 +189,7 @@ export default function About() {
               fontSize: ".9rem",
             }}
           >
-            Interested in the entire frontend spectrum and working on ambitious
+            Interested in the entire fullstack spectrum and working on ambitious
             projects with positive people.
           </Typography>
           <Typography

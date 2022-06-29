@@ -21,7 +21,7 @@ import theme from "../src/theme";
 enum SocialLinks {
   TWITTER = "https://twitter.com/metehanglc",
   GITHUB = "https://github.com/mthnglac",
-  LINKEDIN = "https://www.linkedin.com/in/metehan-g%C3%BCla%C3%A7-02b337104/",
+  LINKEDIN = "https://www.linkedin.com/in/metehanglc",
   SOUNDCLOUD = "https://soundcloud.com/metehan-g-la",
 }
 
@@ -190,7 +190,7 @@ export default function Skills() {
               fontSize: ".9rem",
             }}
           >
-            The main area of my expertise is frontend development (client side).
+            The main area of my expertise is backend development (server side).
           </Typography>
           <Typography
             variant="inherit"
@@ -202,8 +202,8 @@ export default function Skills() {
               fontSize: ".90rem",
             }}
           >
-            HTML, CSS, Javascript, building small and medium web apps with
-            ReactJS, ReactNative, NextJS, EmberJS, VueJS, NuxtJS, custom
+            HTML, CSS, Javascript, building small, medium and big web apps with
+            NodeJS, ReactJS, ReactNative, NextJS, EmberJS, VueJS, custom
             plugins, features, animations and coding interactive layouts.
           </Typography>
           <Typography
